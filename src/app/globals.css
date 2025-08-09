@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F9F9F9;
+  --foreground: #000000;
+  --brand-blue: #0880C7;
+  --brand-dark-blue: #223C8A;
+  --brand-orange: #DD773D;
+  
+  /* Basic shadcn/ui variables */
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #0880C7;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #0880C7;
+  --radius: 0.5rem;
+}
+
+/* Removed @theme inline directive that may be causing CSS compilation issues */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F9F9F9;
+    --foreground: #000000;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* Prevent iOS zoom on form inputs */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  
+  /* Improve font rendering consistency */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  
+  /* Prevent horizontal scrolling on mobile */
+  overflow-x: hidden;
+  
+  /* Improve font rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animation keyframes for enhanced components */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards 0.3s;
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+/* Rich Text Editor Prose Styles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-2xl font-bold mb-4 mt-6;
+}
+
+.prose h2 {
+  @apply text-xl font-bold mb-3 mt-5;
+}
+
+.prose h3 {
+  @apply text-lg font-bold mb-2 mt-4;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4 pl-4;
+}
+
+.prose ol {
+  @apply list-decimal list-inside mb-4 pl-4;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 mb-4;
+}
+
+.prose code {
+  @apply bg-gray-100 rounded px-1 py-0.5 text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-100 rounded p-4 overflow-x-auto mb-4;
+}
+
+.prose a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.prose img {
+  @apply max-w-full h-auto rounded-lg mb-4;
+}
+
+.prose hr {
+  @apply border-gray-300 my-6;
+}
+
+/* Dark mode prose styles */
+.dark .prose blockquote {
+  @apply border-gray-600 text-gray-400;
+}
+
+.dark .prose code {
+  @apply bg-gray-800 text-gray-200;
+}
+
+.dark .prose pre {
+  @apply bg-gray-800;
+}
