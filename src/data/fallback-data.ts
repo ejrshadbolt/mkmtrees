@@ -126,6 +126,89 @@ export const fallbackPosts = [
   }
 ];
 
+export const fallbackProducts = [
+  {
+    id: 1,
+    name: "Dry Split Fire Wood",
+    slug: "dry-split-fire-wood",
+    description: `<p>Premium dry split firewood, seasoned and ready to burn. Our firewood is locally sourced from Canterbury and properly seasoned for optimal heat output and minimal smoke production.</p>
+                  <p>Perfect for home heating, pizza ovens, and outdoor fires. Each piece is split to ideal burning size and stored in dry conditions to ensure consistent quality.</p>
+                  <p><strong>Quality guarantee:</strong> All firewood is tested for moisture content and seasoned for at least 12 months before delivery.</p>`,
+    short_description: "Premium dry split firewood, seasoned and ready to burn",
+    featured_image_id: null,
+    featured_image: "https://placehold.co/800x600/8b4513/ffffff?text=Dry+Split+Firewood",
+    category: "firewood",
+    sizes: JSON.stringify(["1 cubic meter", "2 cubic meters", "3 cubic meters", "5 cubic meters"]),
+    base_price: 180,
+    price_unit: "per cubic meter",
+    available: true,
+    sort_order: 1,
+    created_at: Math.floor(Date.now() / 1000) - 86400,
+    updated_at: Math.floor(Date.now() / 1000) - 86400,
+    created_by: 1
+  },
+  {
+    id: 2,
+    name: "Mixed Age Mulch",
+    slug: "mixed-age-mulch",
+    description: `<p>High-quality mixed age mulch perfect for garden beds, pathways, and landscaping projects. Our mulch is produced from locally sourced timber and vegetation, properly composted and aged for optimal soil health benefits.</p>
+                  <p>Helps retain soil moisture, suppress weeds, and gradually improves soil structure as it breaks down. Suitable for both residential and commercial landscaping applications.</p>
+                  <p><strong>Eco-friendly:</strong> Made from recycled tree waste and vegetation from our Canterbury tree services.</p>`,
+    short_description: "Premium mixed age mulch for gardens and landscaping",
+    featured_image_id: null,
+    featured_image: "https://placehold.co/800x600/2d5016/ffffff?text=Mixed+Age+Mulch",
+    category: "mulch",
+    sizes: JSON.stringify(["1 cubic meter", "3 cubic meters", "5 cubic meters", "10 cubic meters"]),
+    base_price: 45,
+    price_unit: "per cubic meter",
+    available: true,
+    sort_order: 2,
+    created_at: Math.floor(Date.now() / 1000) - 86400,
+    updated_at: Math.floor(Date.now() / 1000) - 86400,
+    created_by: 1
+  },
+  {
+    id: 3,
+    name: "Calf Bedding",
+    slug: "calf-bedding",
+    description: `<p>Clean, absorbent calf bedding made from quality wood chips and sawdust. Specially processed to provide excellent drainage and comfort for young calves in sheds and outdoor shelters.</p>
+                  <p>Our bedding material is dust-free, highly absorbent, and helps maintain dry, healthy conditions for livestock. Sourced from untreated timber to ensure animal safety.</p>
+                  <p><strong>Farm-tested:</strong> Used by Canterbury dairy and beef farmers for superior calf comfort and health.</p>`,
+    short_description: "Clean, absorbent bedding material for calves and young stock",
+    featured_image_id: null,
+    featured_image: "https://placehold.co/800x600/daa520/ffffff?text=Calf+Bedding",
+    category: "bedding",
+    sizes: JSON.stringify(["2 cubic meters", "5 cubic meters", "10 cubic meters", "Truck load"]),
+    base_price: 35,
+    price_unit: "per cubic meter",
+    available: true,
+    sort_order: 3,
+    created_at: Math.floor(Date.now() / 1000) - 86400,
+    updated_at: Math.floor(Date.now() / 1000) - 86400,
+    created_by: 1
+  },
+  {
+    id: 4,
+    name: "Custom Load",
+    slug: "custom-load",
+    description: `<p>Need something specific? Our custom load service allows you to specify exactly what wood chip, mulch, or bedding material you need for your project.</p>
+                  <p>We can create custom mixes, specific chip sizes, or deliver materials processed to your exact requirements. Popular for specialized landscaping projects, specific livestock needs, or unique construction applications.</p>
+                  <p><strong>Fully customizable:</strong> Contact us to discuss your specific requirements and get a tailored quote.</p>`,
+    short_description: "Customizable wood chip, mulch, or bedding to your specifications",
+    featured_image_id: null,
+    featured_image: "https://placehold.co/800x600/4a5568/ffffff?text=Custom+Load",
+    category: "custom",
+    sizes: JSON.stringify(["Quote required"]),
+    base_price: 0,
+    price_unit: "per quote",
+    available: true,
+    sort_order: 4,
+    created_at: Math.floor(Date.now() / 1000) - 86400,
+    updated_at: Math.floor(Date.now() / 1000) - 86400,
+    created_by: 1
+  }
+];
+
 export const fallbackProjects = [
   {
     id: 1,

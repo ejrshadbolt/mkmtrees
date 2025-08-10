@@ -100,6 +100,24 @@ export interface PortfolioCategory {
   updated_at: number;
 }
 
+export interface Product {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  short_description?: string;
+  featured_image_id?: number;
+  category: string; // e.g., 'firewood', 'mulch', 'bedding'
+  sizes?: string; // JSON array of size options
+  base_price: number;
+  price_unit: string; // e.g., 'per cubic meter', 'per load'
+  available: boolean;
+  sort_order: number;
+  created_at: number;
+  updated_at: number;
+  created_by?: number;
+}
+
 // Database service class
 export class DbService {
   constructor(private db: D1Database) {}
@@ -263,6 +281,97 @@ export class DbService {
     return await this.db.prepare('SELECT * FROM portfolio_categories WHERE slug = ?')
       .bind(slug)
       .first<PortfolioCategory | null>();
+  }
+
+  // Products
+  async getAvailableProducts(limit = 20, offset = 0): Promise<Product[]> {
+    return await this.db.prepare('SELECT * FROM products WHERE available = 1 ORDER BY sort_order ASC, created_at DESC LIMIT ? OFFSET ?')
+      .bind(limit, offset)
+      .all<Product>()
+      .then((result: D1Result<Product>) => result.results);
+  }
+
+  async getProductBySlug(slug: string): Promise<Product | null> {
+    return await this.db.prepare('SELECT * FROM products WHERE slug = ?')
+      .bind(slug)
+      .first<Product | null>();
+  }
+
+  async getProductById(id: number): Promise<Product | null> {
+    return await this.db.prepare('SELECT * FROM products WHERE id = ?')
+      .bind(id)
+      .first<Product | null>();
+  }
+
+  async getProductsByCategory(category: string): Promise<Product[]> {
+    return await this.db.prepare('SELECT * FROM products WHERE category = ? AND available = 1 ORDER BY sort_order ASC')
+      .bind(category)
+      .all<Product>()
+      .then((result: D1Result<Product>) => result.results);
+  }
+
+  async createProduct(product: Omit<Product, 'id' | 'created_at' | 'updated_at'>): Promise<number> {
+    const now = Math.floor(Date.now() / 1000);
+    const result = await this.db.prepare(`
+      INSERT INTO products (
+        name, slug, description, short_description, featured_image_id,
+        category, sizes, base_price, price_unit, available, sort_order,
+        created_at, updated_at, created_by
+      )
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `)
+      .bind(
+        product.name,
+        product.slug,
+        product.description,
+        product.short_description,
+        product.featured_image_id,
+        product.category,
+        product.sizes,
+        product.base_price,
+        product.price_unit,
+        product.available ? 1 : 0,
+        product.sort_order,
+        now,
+        now,
+        product.created_by
+      )
+      .run();
+    
+    return result.meta.last_row_id!;
+  }
+
+  async updateProduct(id: number, product: Partial<Omit<Product, 'id' | 'created_at'>>): Promise<void> {
+    const now = Math.floor(Date.now() / 1000);
+    await this.db.prepare(`
+      UPDATE products 
+      SET name = ?, slug = ?, description = ?, short_description = ?,
+          featured_image_id = ?, category = ?, sizes = ?, base_price = ?,
+          price_unit = ?, available = ?, sort_order = ?, updated_at = ?
+      WHERE id = ?
+    `)
+      .bind(
+        product.name,
+        product.slug,
+        product.description,
+        product.short_description,
+        product.featured_image_id,
+        product.category,
+        product.sizes,
+        product.base_price,
+        product.price_unit,
+        product.available ? 1 : 0,
+        product.sort_order,
+        now,
+        id
+      )
+      .run();
+  }
+
+  async deleteProduct(id: number): Promise<void> {
+    await this.db.prepare('DELETE FROM products WHERE id = ?')
+      .bind(id)
+      .run();
   }
 }
 

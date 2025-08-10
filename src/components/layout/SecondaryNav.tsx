@@ -6,52 +6,52 @@ import { ChevronDown } from 'lucide-react';
 
 const serviceCategories = [
   {
-    name: 'Tree Topping / Vegetation Management',
-    href: '/services/tree-topping-vegetation-management',
+    name: 'Tree Services',
+    href: '/tree-services-canterbury',
     children: [
-      { name: 'Tree Topping', href: '/services/tree-topping' },
-      { name: 'Tall Tree Topping', href: '/services/tall-tree-topping' }
+      { name: 'Qualified Arborists', href: '/tree-services/qualified-arborists-canterbury' },
+      { name: 'Stump Grinding', href: '/tree-services/stump-grinding-canterbury' },
+      { name: 'Tree Reductions', href: '/tree-services/tree-reductions-canterbury' }
     ]
   },
   {
-    name: 'Tree Services',
-    href: '/services/tree-services',
+    name: 'Tree Topping / Vegetation Management',
+    href: '/tree-topping-vegetation-management-canterbury',
     children: [
-      { name: 'Qualified Arborists', href: '/services/qualified-arborists' },
-      { name: 'Stump Grinding', href: '/services/stump-grinding' },
-      { name: 'Tree Reductions', href: '/services/tree-reductions' }
+      { name: 'Tree Topping', href: '/tree-topping/tree-topping-canterbury' },
+      { name: 'Tall Tree Topping', href: '/tree-topping/tall-tree-topping-canterbury' }
     ]
   },
   {
     name: 'Earthworks',
-    href: '/services/earthworks',
+    href: '/earthworks-canterbury',
     children: [
-      { name: 'Station Work', href: '/services/station-work' },
-      { name: 'Land Clearing', href: '/services/land-clearing' },
-      { name: 'Heavy-Duty Tilling', href: '/services/heavy-duty-tilling' }
+      { name: 'Station Work & Rural Earthworks', href: '/earthworks/station-work-canterbury' },
+      { name: 'Land Clearing', href: '/earthworks/land-clearing-canterbury' },
+      { name: 'Heavy-Duty Tilling', href: '/earthworks/heavy-duty-tilling-canterbury' }
     ]
   },
   {
     name: 'Emergency Callouts',
-    href: '/services/emergency-callouts',
+    href: '/emergency-callouts-canterbury',
     children: [
-      { name: 'Emergency Tree Services', href: '/services/emergency-tree-services' },
-      { name: 'Emergency Earthworks', href: '/services/emergency-earthworks' }
+      { name: 'Emergency Tree Services', href: '/emergency-callouts/tree-services-canterbury' },
+      { name: 'Emergency Earthworks', href: '/emergency-callouts/earthworks-canterbury' }
     ]
   },
   {
     name: 'Mulching',
-    href: '/services/mulching',
+    href: '/mulching-canterbury',
     children: [
-      { name: 'Heavy-Duty Mulching', href: '/services/heavy-duty-mulching' },
-      { name: 'Gorse & Slash Mulching', href: '/services/gorse-slash-mulching' },
-      { name: 'Paddock Mulching', href: '/services/paddock-mulching' }
+      { name: 'Heavy-Duty Mulching', href: '/mulching/heavy-duty-canterbury' },
+      { name: 'Gorse & Slash Mulching', href: '/mulching/gorse-slash-canterbury' },
+      { name: 'Paddock Mulching', href: '/mulching/paddock-canterbury' }
     ]
   }
 ];
 
 const singleServices = [
-  { name: 'Wood Chip & Fire Wood', href: '/services/wood-chip-fire-wood' }
+  { name: 'Wood Chip & Fire Wood', href: '/wood-chip-firewood-canterbury' }
 ];
 
 export default function SecondaryNav() {

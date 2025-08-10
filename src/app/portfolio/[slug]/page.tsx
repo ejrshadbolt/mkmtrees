@@ -6,6 +6,7 @@ import { getRequestContext } from '@cloudflare/next-on-pages';
 import { createDbService } from '@/lib/db';
 import { fallbackProjects } from '@/data/fallback-data';
 import ContactSection from '@/components/sections/ContactSection';
+import PortfolioGallery from '@/components/ui/PortfolioGallery';
 
 interface PortfolioProjectPageProps {
   params: {
@@ -132,43 +133,39 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
       </section>
 
       {/* Image Gallery - Main Focus */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Project Gallery
             </h2>
+            <div className="w-16 h-1 mb-12" style={{ backgroundColor: '#F3ED17' }}></div>
             
-            {/* Featured Image */}
-            {project.featured_image && (
-              <div className="relative aspect-[16/9] mb-12 rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src={project.featured_image}
-                  alt={`${project.title} - Main project image`}
-                  fill
-                  className="object-cover"
+            {(() => {
+              // Combine featured image with gallery images
+              const allImages = [];
+              const allTitles = [];
+              
+              if (project.featured_image) {
+                allImages.push(project.featured_image);
+                allTitles.push(`${project.title} - Featured image`);
+              }
+              
+              if (project.gallery_images && project.gallery_images.length > 0) {
+                allImages.push(...project.gallery_images);
+                allTitles.push(...project.gallery_images.map((_, index) => `${project.title} - Gallery image ${index + 1}`));
+              }
+              
+              if (allImages.length === 0) return null;
+              
+              return (
+                <PortfolioGallery 
+                  images={allImages}
+                  titles={allTitles}
+                  projectTitle={project.title}
                 />
-              </div>
-            )}
-
-            {/* Gallery Grid */}
-            {project.gallery_images && project.gallery_images.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {project.gallery_images.map((image, index) => (
-                  <div 
-                    key={index}
-                    className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 group"
-                  >
-                    <Image
-                      src={image}
-                      alt={`${project.title} - Gallery image ${index + 1}`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
+              );
+            })()}
           </div>
         </div>
       </section>
