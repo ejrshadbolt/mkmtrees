@@ -2,6 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import Header from './Header';
+import SecondaryNav from './SecondaryNav';
+import Footer from './Footer';
 
 interface ConditionalLayoutProps {
   children: React.ReactNode;
@@ -16,13 +18,17 @@ export default function ConditionalLayout({ children }: ConditionalLayoutProps) 
     return <>{children}</>;
   }
 
-  // Regular website layout with header
+  // Regular website layout with header and footer
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <div className="sticky top-0 z-50">
+        <Header />
+        <SecondaryNav />
+      </div>
       <main className="flex-grow" role="main" id="main-content">
         {children}
       </main>
+      <Footer />
     </div>
   );
 } 

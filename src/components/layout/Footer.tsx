@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, LucideIcon } from 'lucide-react';
-import { businessConfig } from '@/config/business';
+import Image from 'next/image';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, LucideIcon, Phone, Mail, MapPin } from 'lucide-react';
+import { businessConfig, navigationConfig } from '@/config/business';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,74 +36,189 @@ export default function Footer() {
   ].filter((item): item is { name: string; href: string; icon: LucideIcon } => Boolean(item));
 
   return (
-    <footer className="bg-gray-900">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="space-y-8 xl:col-span-1">
-            <div>
-              <Link href="/" className="text-2xl font-bold text-white">
-                {businessConfig.name}
-              </Link>
-              <p className="mt-4 text-gray-300 text-base">
-                {businessConfig.description}
-              </p>
-            </div>
-            {socialLinks.length > 0 && (
-              <div className="flex space-x-6">
-                {socialLinks.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-gray-400 hover:text-gray-300 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <item.icon className="h-6 w-6" />
-                  </a>
-                ))}
+    <footer style={{ backgroundColor: '#050608' }}>
+      <div className="w-full px-6 lg:px-12 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            {/* Company Information */}
+            <div className="lg:col-span-1">
+              <div className="mb-6">
+                <Link href="/" className="text-3xl font-bold text-white">
+                  {businessConfig.name}
+                </Link>
+                <div className="w-16 h-1 mt-3" style={{ backgroundColor: '#F3ED17' }}></div>
               </div>
-            )}
-          </div>
-          <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div className="mt-12 md:mt-0">
-                <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
-                  Contact
-                </h3>
-                <ul className="mt-4 space-y-4">
-                  <li>
-                    <span className="text-base text-gray-300">
-                      {businessConfig.contact.address.street}<br />
-                      {businessConfig.contact.address.city}, {businessConfig.contact.address.state} {businessConfig.contact.address.zip}
-                    </span>
-                  </li>
-                  <li>
+              <p className="text-gray-300 text-base leading-relaxed mb-6">
+                Professional tree services and land clearing across Canterbury. Qualified arborists with Gold SiteWise certification.
+              </p>
+              
+              {/* SiteWise Gold Logo */}
+              <div className="mb-6">
+                <Image
+                  src="/sistewiselogo.png"
+                  alt="SiteWise Gold Certification 2024/25"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </div>
+              
+              {socialLinks.length > 0 && (
+                <div className="flex space-x-4">
+                  {socialLinks.map((item) => (
                     <a
-                      href={`tel:${businessConfig.contact.phone.replace(/[^\d]/g, '')}`}
-                      className="text-base text-gray-300 hover:text-white transition-colors"
+                      key={item.name}
+                      href={item.href}
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-black transition-all duration-200 hover:scale-110"
+                      style={{ backgroundColor: '#F3ED17' }}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="sr-only">{item.name}</span>
+                      <item.icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-6">
+                Quick Links
+              </h3>
+              <ul className="space-y-3">
+                {navigationConfig.main.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block"
+                    >
+                      <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                      <span className="relative">
+                        {item.name}
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-6">
+                Our Services
+              </h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/services/tree-topping-vegetation-management" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                    <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                    <span className="relative">
+                      Tree Topping / Vegetation Management
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/tree-services" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                    <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                    <span className="relative">
+                      Tree Services
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/earthworks" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                    <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                    <span className="relative">
+                      Earthworks
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/emergency-callouts" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                    <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                    <span className="relative">
+                      Emergency Callouts
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/mulching" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                    <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
+                    <span className="relative">
+                      Mulching
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Information */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-6">
+                Get In Touch
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Phone className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Phone</p>
+                    <Link
+                      href={`tel:${businessConfig.contact.phone}`}
+                      className="text-white hover:text-gray-300 transition-colors font-semibold"
                     >
                       {businessConfig.contact.phone}
-                    </a>
-                  </li>
-                  <li>
-                    <a
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <Mail className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Email</p>
+                    <Link
                       href={`mailto:${businessConfig.contact.email}`}
-                      className="text-base text-gray-300 hover:text-white transition-colors"
+                      className="text-white hover:text-gray-300 transition-colors font-semibold break-all"
                     >
                       {businessConfig.contact.email}
-                    </a>
-                  </li>
-                </ul>
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Service Area</p>
+                    <p className="text-white font-semibold">
+                      Canterbury &<br />Surrounding Areas
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="mt-12 border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-base text-gray-400 mb-4 md:mb-0">
-              &copy; {currentYear} {businessConfig.copyright}. All rights reserved.
-            </p>
+
+          {/* Bottom Section */}
+          <div className="mt-12 pt-8 border-t border-gray-700">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 mb-4 md:mb-0">
+                &copy; {currentYear} {businessConfig.name}. All rights reserved.
+              </p>
+              <div className="flex items-center space-x-6 text-sm text-gray-400">
+                <span>Gold SiteWise Certified</span>
+                <span>•</span>
+                <span>Licensed & Insured</span>
+                <span>•</span>
+                <span>Free Quotes</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

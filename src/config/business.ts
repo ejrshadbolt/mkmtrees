@@ -3,14 +3,14 @@
 
 export const businessConfig = {
   // Basic Business Information
-  name: "Your Business Name",
-  tagline: "Your business tagline or value proposition",
-  description: "Brief description of your business",
+  name: "MKM Trees",
+  tagline: "Professional Tree Services",
+  description: "Expert tree care and landscaping services",
   
   // Contact Information
   contact: {
-    email: "info@yourbusiness.com",
-    phone: "123-456-7890",
+    email: "mkmcontracting@outlook.co.nz",
+    phone: "021 040 8099",
     address: {
       street: "123 Business Street",
       city: "Your City",
@@ -50,8 +50,8 @@ export const businessConfig = {
   
   // Logo and Branding
   branding: {
-    logo: "/images/logo.png",
-    logoAlt: "Your Business Name Logo",
+    logo: "/logo.png",
+    logoAlt: "MKM Trees Logo",
     favicon: "/favicon.ico",
     primaryColor: "#0066cc",
     secondaryColor: "#333333"
@@ -64,8 +64,13 @@ export const businessConfig = {
 // Navigation Configuration (configure as needed for each project)
 export const navigationConfig = {
   main: [
-    { name: "Home", href: "/" }
-    // Add custom navigation items per project
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Reviews", href: "/reviews" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Tips & Advice", href: "/tips" },
+    { name: "Service Areas", href: "/service-areas" },
+    { name: "Contact Us", href: "/contact" }
   ],
   
   footer: [

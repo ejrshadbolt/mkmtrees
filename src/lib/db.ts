@@ -71,6 +71,35 @@ export interface FormSubmission {
   processed_at?: number;
 }
 
+export interface PortfolioProject {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  short_description?: string;
+  featured_image_id?: number;
+  category_id: number;
+  client_name?: string;
+  project_url?: string;
+  project_date?: string;
+  technologies?: string; // JSON array
+  published: boolean;
+  published_at?: number;
+  created_at: number;
+  updated_at: number;
+  created_by?: number;
+  sort_order: number;
+}
+
+export interface PortfolioCategory {
+  id: number;
+  name: string;
+  slug: string;
+  description?: string;
+  created_at: number;
+  updated_at: number;
+}
+
 // Database service class
 export class DbService {
   constructor(private db: D1Database) {}
@@ -194,6 +223,46 @@ export class DbService {
       .run();
     
     return result.meta.last_row_id!;
+  }
+
+  // Portfolio Projects
+  async getPublishedPortfolioProjects(limit = 10, offset = 0): Promise<PortfolioProject[]> {
+    return await this.db.prepare('SELECT * FROM portfolio_projects WHERE published = 1 ORDER BY published_at DESC, sort_order ASC LIMIT ? OFFSET ?')
+      .bind(limit, offset)
+      .all<PortfolioProject>()
+      .then((result: D1Result<PortfolioProject>) => result.results);
+  }
+
+  async getPortfolioProjectBySlug(slug: string): Promise<PortfolioProject | null> {
+    return await this.db.prepare('SELECT * FROM portfolio_projects WHERE slug = ?')
+      .bind(slug)
+      .first<PortfolioProject | null>();
+  }
+
+  async getPortfolioProjectById(id: number): Promise<PortfolioProject | null> {
+    return await this.db.prepare('SELECT * FROM portfolio_projects WHERE id = ?')
+      .bind(id)
+      .first<PortfolioProject | null>();
+  }
+
+  async getRecentPortfolioProjects(limit = 3): Promise<PortfolioProject[]> {
+    return await this.db.prepare('SELECT * FROM portfolio_projects WHERE published = 1 ORDER BY published_at DESC, created_at DESC LIMIT ?')
+      .bind(limit)
+      .all<PortfolioProject>()
+      .then((result: D1Result<PortfolioProject>) => result.results);
+  }
+
+  // Portfolio Categories
+  async getPortfolioCategories(): Promise<PortfolioCategory[]> {
+    return await this.db.prepare('SELECT * FROM portfolio_categories ORDER BY name ASC')
+      .all<PortfolioCategory>()
+      .then((result: D1Result<PortfolioCategory>) => result.results);
+  }
+
+  async getPortfolioCategoryBySlug(slug: string): Promise<PortfolioCategory | null> {
+    return await this.db.prepare('SELECT * FROM portfolio_categories WHERE slug = ?')
+      .bind(slug)
+      .first<PortfolioCategory | null>();
   }
 }
 
