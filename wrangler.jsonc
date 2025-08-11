@@ -17,8 +17,8 @@
 		{
 			"binding": "DB",
 			"database_name": "mkm-trees-db",
-			"database_id": "YOUR_DATABASE_ID_HERE",
-			"preview_database_id": "YOUR_PREVIEW_DATABASE_ID_HERE"
+			"database_id": "3dbffeb8-b79b-4104-830d-ce3f2d3c32fc",
+			"preview_database_id": "3dbffeb8-b79b-4104-830d-ce3f2d3c32fc"
 		}
 	],
 	"r2_buckets": [
@@ -48,7 +48,7 @@
 				{
 					"binding": "DB",
 					"database_name": "mkm-trees-db",
-					"database_id": "YOUR_DATABASE_ID_HERE"
+					"database_id": "3dbffeb8-b79b-4104-830d-ce3f2d3c32fc"
 				}
 			],
 			"r2_buckets": [
@@ -66,7 +66,7 @@
 				{
 					"binding": "DB",
 					"database_name": "mkm-trees-db",
-					"database_id": "YOUR_DATABASE_ID_HERE"
+					"database_id": "3dbffeb8-b79b-4104-830d-ce3f2d3c32fc"
 				}
 			],
 			"r2_buckets": [
