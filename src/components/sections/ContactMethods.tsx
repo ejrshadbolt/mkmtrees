@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 import { businessConfig } from '@/config/business';
 
 const contactMethods = [
@@ -20,15 +20,6 @@ const contactMethods = [
     action: "Send Email",
     href: `mailto:${businessConfig.contact.email}`,
     description: "Email us your project requirements, photos, and questions. We'll respond with a detailed quote within 24 hours."
-  },
-  {
-    icon: MapPin,
-    title: "Service Areas", 
-    subtitle: "Canterbury wide coverage",
-    content: "Canterbury & Surrounding Areas",
-    action: "View Areas",
-    href: "/service-areas",
-    description: "We service all of Canterbury from Christchurch suburbs to rural high country stations. Check if we cover your area."
   },
   {
     icon: MessageCircle,
@@ -58,7 +49,7 @@ export default function ContactMethods() {
           </div>
 
           {/* Contact Methods Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => {
               const IconComponent = method.icon;
               return (
@@ -94,10 +85,15 @@ export default function ContactMethods() {
                   <div className="mt-auto">
                     <Link
                       href={method.href}
-                      className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button"
+                      className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button relative"
                       style={{ backgroundColor: '#F3ED17' }}
                     >
-                      {method.action}
+                      <span className="relative">
+                        {method.action}
+                        <span 
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover/button:scale-x-100 transition-transform duration-300 origin-left"
+                        />
+                      </span>
                     </Link>
                   </div>
                 </div>

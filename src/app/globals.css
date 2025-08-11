@@ -20,10 +20,44 @@ body {
   color: #F3ED17 !important;
 }
 
-/* Fix focus ring to only show yellow */
-.focus\:ring-2:focus {
-  --tw-ring-offset-shadow: none !important;
-  box-shadow: 0 0 0 2px var(--tw-ring-color) !important;
+/* Modern focus management - only show on keyboard navigation */
+* {
+  outline: none;
+}
+
+/* Focus rings for keyboard navigation only */
+.focus-visible-ring {
+  outline: none;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.focus-visible-ring:focus-visible {
+  box-shadow: 0 0 0 2px var(--focus-ring-color, #F3ED17);
+}
+
+/* Focus rings for dark backgrounds */
+.focus-ring-dark:focus-visible {
+  --focus-ring-color: #F3ED17;
+}
+
+/* Focus rings for yellow backgrounds */  
+.focus-ring-yellow:focus-visible {
+  --focus-ring-color: #000000;
+}
+
+/* Focus rings for light backgrounds */
+.focus-ring-light:focus-visible {
+  --focus-ring-color: #000000;
+}
+
+/* Focus rings for white backgrounds using brand yellow */
+.focus-ring-white:focus-visible {
+  --focus-ring-color: #F3ED17;
+}
+
+/* Override Tailwind's default yellow-400 with our brand yellow */
+.focus\:ring-yellow-400:focus {
+  --tw-ring-color: #F3ED17 !important;
 }
 
 :root {

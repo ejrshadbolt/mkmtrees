@@ -51,36 +51,46 @@ export default function TeamSection({
           </p>
         </div>
 
-        {/* Team Grid */}
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Team Cards Container - Larger width */}
+        <div className="w-4/5 mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="text-center group">
-                {/* Image Container */}
-                <div className="relative overflow-hidden mb-6 mx-auto w-80 h-80 bg-gray-200">
+              <div 
+                key={index} 
+                className="group relative overflow-hidden bg-gray-50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                {/* Team Member Image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                  {/* Subtle overlay for better text readability */}
+                  <div className="absolute inset-0 bg-black bg-opacity-10 group-hover:bg-opacity-5 transition-all duration-300"></div>
                 </div>
 
-                {/* Member Info */}
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                {/* Member Info Card Content */}
+                <div className="p-8 space-y-4 text-left">
+                  <h3 className="text-2xl font-bold text-gray-900 leading-tight">
                     {member.name}
                   </h3>
-                  <p className="text-lg font-semibold" style={{ color: '#F3ED17' }}>
+                  
+                  <p className="text-lg text-gray-700 font-semibold">
                     {member.role}
                   </p>
+                  
                   {member.experience && (
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-gray-600 text-sm font-medium">
                       {member.experience}
                     </p>
                   )}
+                  
+                  {/* Yellow accent bar at bottom */}
+                  <div className="pt-3">
+                    <div className="w-12 h-1" style={{ backgroundColor: '#F3ED17' }}></div>
+                  </div>
                 </div>
               </div>
             ))}

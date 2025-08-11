@@ -42,7 +42,7 @@ export default function ValuesSection({
   title = "What We Stand For" 
 }: ValuesSectionProps) {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-white">
       <div className="w-full px-6 lg:px-12">
         {/* Title */}
         <div className="mb-16 text-center">
@@ -60,7 +60,7 @@ export default function ValuesSection({
               return (
                 <div 
                   key={index} 
-                  className="bg-white p-8 shadow-sm border-l-4 border-gray-200 hover:border-yellow-400 hover:scale-105 transition-all duration-200 text-center group"
+                  className="bg-gray-50 p-8 shadow-sm border-l-4 border-gray-200 hover:border-yellow-400 hover:scale-105 transition-all duration-200 text-center group"
                 >
                   {/* Icon */}
                   <div className="flex justify-center mb-6">

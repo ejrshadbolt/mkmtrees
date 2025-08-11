@@ -85,12 +85,21 @@ export default function BlogTiles({ title, posts }: BlogTilesProps) {
         {/* View All Tips Link */}
         <div className="text-center mt-16">
           <Link
-            href="/tips-advice"
-            className="inline-flex items-center text-gray-900 font-semibold text-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 px-2 py-0.5 rounded relative group"
+            href="/tips"
+            className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+            style={{ 
+              backgroundColor: '#F3ED17',
+              transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+            }}
           >
-            View All Tips & Advice
+            <span className="relative">
+              View All Tips & Advice
+              <span 
+                className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+              />
+            </span>
             <svg
-              className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
+              className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -102,10 +111,6 @@ export default function BlogTiles({ title, posts }: BlogTilesProps) {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-            <span 
-              className="absolute bottom-0 left-2 right-2 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-              style={{ backgroundColor: '#F3ED17' }}
-            />
           </Link>
         </div>
       </div>

@@ -54,6 +54,9 @@ export default async function PortfolioPage() {
         subtitle="Professional tree services and land clearing projects completed across Canterbury."
         backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=MKM+Trees+Portfolio+Projects"
         backgroundAlt="MKM Trees completed tree service and land clearing projects across Canterbury"
+        buttons={[
+          { text: 'Contact Us', href: '/contact', variant: 'primary' }
+        ]}
       />
       
       <PortfolioFull

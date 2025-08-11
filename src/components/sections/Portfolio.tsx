@@ -18,11 +18,11 @@ interface PortfolioProps {
 export default function Portfolio({ title, projects }: PortfolioProps) {
   return (
     <section className="bg-white">
-      {/* Black title strip */}
-      <div className="w-full py-6 px-6 lg:px-12" style={{ backgroundColor: '#050608' }}>
+      {/* White title strip */}
+      <div className="w-full py-6 px-6 lg:px-12 bg-white">
         {title && (
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
               {title}
             </h2>
             <div className="w-16 h-1" style={{ backgroundColor: '#F3ED17' }}></div>
@@ -39,14 +39,17 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
             className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]"
           >
             {/* Image Column */}
-            <div className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200`}>
+            <Link 
+              href={`/portfolio/${project.slug}`}
+              className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200 cursor-pointer focus-visible-ring focus-ring-yellow`}
+            >
               <Image
                 src={project.featured_image}
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-300 hover:scale-105"
               />
-            </div>
+            </Link>
             
             {/* Content Column */}
             <div className={`${isEven ? 'order-2' : 'order-1'} bg-white flex items-center p-8 lg:p-16`}>
@@ -66,12 +69,20 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
                 <div className="pt-4">
                   <Link
                     href={`/portfolio/${project.slug}`}
-                    className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group"
-                    style={{ backgroundColor: '#F3ED17' }}
+                    className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+                    style={{ 
+                      backgroundColor: '#F3ED17',
+                      transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                    }}
                   >
-                    View Project
+                    <span className="relative">
+                      View Project
+                      <span 
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                      />
+                    </span>
                     <svg
-                      className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                      className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -92,14 +103,23 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
       })}
         
       {/* View All Portfolio Link */}
-      <div className="text-center py-6 px-6 lg:px-12" style={{ backgroundColor: '#050608' }}>
+      <div className="text-center py-12 px-6 lg:px-12 bg-white">
         <Link
           href="/portfolio"
-          className="inline-flex items-center text-white font-semibold text-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 px-2 py-0.5 rounded relative group"
+          className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+          style={{ 
+            backgroundColor: '#F3ED17',
+            transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+          }}
         >
-          View All Projects
+          <span className="relative">
+            View All Projects
+            <span 
+              className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            />
+          </span>
           <svg
-            className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
+            className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -111,10 +131,6 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
               d="M9 5l7 7-7 7"
             />
           </svg>
-          <span 
-            className="absolute bottom-0 left-2 right-2 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-            style={{ backgroundColor: '#F3ED17' }}
-          />
         </Link>
       </div>
     </section>

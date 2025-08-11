@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ChevronDown } from 'lucide-react';
 
 const serviceCategories = [
@@ -56,14 +57,51 @@ const singleServices = [
 
 export default function SecondaryNav() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
   const handleMouseEnter = (categoryName: string) => {
+    // Clear any pending close timeout
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     setOpenDropdown(categoryName);
   };
 
   const handleMouseLeave = () => {
-    setOpenDropdown(null);
+    // Add a delay before closing to allow navigation to dropdown
+    const timeout = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150); // 150ms delay
+    setCloseTimeout(timeout);
   };
+
+  const handleDropdownMouseEnter = () => {
+    // Clear close timeout when entering dropdown
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    // Close immediately when leaving dropdown area
+    setOpenDropdown(null);
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+      }
+    };
+  }, [closeTimeout]);
 
   return (
     <nav 
@@ -84,12 +122,16 @@ export default function SecondaryNav() {
             >
               <Link
                 href={category.href}
-                className="flex items-center space-x-1 text-black font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 px-2 py-0.5 rounded relative group"
+                className="flex items-center space-x-1 text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group"
               >
                 <span>{category.name}</span>
                 <ChevronDown className="h-3 w-3" />
                 <span 
-                  className="absolute bottom-0 left-2 right-2 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                  className={`absolute bottom-0 left-2 right-2 h-0.5 bg-black transform transition-transform duration-200 origin-left ${
+                    pathname === category.href || category.children.some(child => pathname === child.href) 
+                      ? 'scale-x-100' 
+                      : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
                 />
               </Link>
 
@@ -103,17 +145,21 @@ export default function SecondaryNav() {
                     minWidth: '100%',
                     top: 'calc(100% + 2px)'
                   }}
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
                 >
-                  <div>
+                  <div className="py-1">
                     {category.children.map((child) => (
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2 text-sm font-semibold text-black transition-all duration-200 whitespace-nowrap relative group"
+                        className="block px-4 py-2 text-sm font-semibold text-black transition-all duration-200 whitespace-nowrap relative group focus-visible-ring focus-ring-yellow"
                       >
                         {child.name}
                         <span 
-                          className="absolute bottom-1 left-4 right-4 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                          className={`absolute bottom-1 left-4 right-4 h-0.5 bg-black transform transition-transform duration-200 origin-left ${
+                            pathname === child.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                          }`}
                         />
                       </Link>
                     ))}
@@ -128,11 +174,13 @@ export default function SecondaryNav() {
             <Link
               key={service.name}
               href={service.href}
-              className="text-black font-semibold text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 px-2 py-0.5 rounded relative group"
+              className="text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group"
             >
               {service.name}
               <span 
-                className="absolute bottom-0 left-2 right-2 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                className={`absolute bottom-0 left-2 right-2 h-0.5 bg-black transform transition-transform duration-200 origin-left ${
+                  pathname === service.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`}
               />
             </Link>
           ))}

@@ -1,6 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Phone, Star } from 'lucide-react';
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Phone, 
+  Star, 
+  Truck,
+  Zap,
+  Eye,
+  Flame,
+  Wind,
+  Shield,
+  TreePine,
+  Wrench,
+  Clock,
+  Settings,
+  Home,
+  Mountain,
+  Scissors,
+  Navigation,
+  Droplets,
+  FileCheck,
+  Leaf,
+  Sun
+} from 'lucide-react';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import { businessConfig } from '@/config/business';
 import ContactSection from '@/components/sections/ContactSection';
@@ -23,6 +46,41 @@ interface ChildServicePageProps {
   heroImageAlt: string;
   features: ServiceFeature[];
   bulletPoints: string[];
+}
+
+// Function to get appropriate icon for bullet point text
+function getIconForBulletPoint(text: string) {
+  const lowerText = text.toLowerCase();
+  
+  // Tree services related
+  if (lowerText.includes('free') && (lowerText.includes('quote') || lowerText.includes('estimate'))) return <Phone className="w-5 h-5" />;
+  if (lowerText.includes('insurance') || lowerText.includes('certified') || lowerText.includes('sitewise')) return <Shield className="w-5 h-5" />;
+  if (lowerText.includes('cleanup') || lowerText.includes('disposal') || lowerText.includes('waste')) return <CheckCircle className="w-5 h-5" />;
+  if (lowerText.includes('assessment') || lowerText.includes('health') || lowerText.includes('expert')) return <Eye className="w-5 h-5" />;
+  if (lowerText.includes('council') || lowerText.includes('regulation') || lowerText.includes('compliance')) return <FileCheck className="w-5 h-5" />;
+  if (lowerText.includes('emergency') || lowerText.includes('24/7') || lowerText.includes('callout')) return <Clock className="w-5 h-5" />;
+  if (lowerText.includes('equipment') || lowerText.includes('specialized') || lowerText.includes('machinery')) return <Wrench className="w-5 h-5" />;
+  if (lowerText.includes('access') || lowerText.includes('difficult')) return <Mountain className="w-5 h-5" />;
+  
+  // Tree topping/vegetation specific
+  if (lowerText.includes('tree topping') || lowerText.includes('height control')) return <Scissors className="w-5 h-5" />;
+  if (lowerText.includes('vegetation') || lowerText.includes('shelterbelt') || lowerText.includes('overgrown')) return <Leaf className="w-5 h-5" />;
+  if (lowerText.includes('powerline') || lowerText.includes('power line') || lowerText.includes('electrical')) return <Zap className="w-5 h-5" />;
+  if (lowerText.includes('view') || lowerText.includes('light') || lowerText.includes('restoration')) return <Sun className="w-5 h-5" />;
+  if (lowerText.includes('wind') || lowerText.includes('pruning')) return <Wind className="w-5 h-5" />;
+  if (lowerText.includes('fire') || lowerText.includes('hazard')) return <Flame className="w-5 h-5" />;
+  
+  // Earthworks specific
+  if (lowerText.includes('heavy') && (lowerText.includes('machinery') || lowerText.includes('equipment'))) return <Truck className="w-5 h-5" />;
+  if (lowerText.includes('station') || lowerText.includes('high country') || lowerText.includes('rural')) return <Mountain className="w-5 h-5" />;
+  if (lowerText.includes('land clearing') || lowerText.includes('clearing')) return <TreePine className="w-5 h-5" />;
+  if (lowerText.includes('soil') || lowerText.includes('compacted') || lowerText.includes('tilling')) return <Settings className="w-5 h-5" />;
+  if (lowerText.includes('track') || lowerText.includes('access') || lowerText.includes('maintenance')) return <Navigation className="w-5 h-5" />;
+  if (lowerText.includes('drainage') || lowerText.includes('water')) return <Droplets className="w-5 h-5" />;
+  if (lowerText.includes('stock') || lowerText.includes('farm') || lowerText.includes('operations')) return <Home className="w-5 h-5" />;
+  
+  // Default icon for any other cases
+  return <CheckCircle className="w-5 h-5" />;
 }
 
 export default function ChildServicePage({
@@ -64,11 +122,16 @@ export default function ChildServicePage({
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={`tel:${businessConfig.contact.phone}`}
-                  className="inline-flex items-center px-8 py-4 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group text-lg"
+                  className="inline-flex items-center px-8 py-4 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group text-lg relative"
                   style={{ backgroundColor: '#F3ED17' }}
                 >
                   <Phone className="mr-2 h-5 w-5" />
-                  Call for Free Quote
+                  <span className="relative">
+                    Call for Free Quote
+                    <span 
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                    />
+                  </span>
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
                 
@@ -147,17 +210,21 @@ export default function ChildServicePage({
               {features.map((feature, index) => (
                 <div 
                   key={index}
-                  className="text-center p-6 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
+                  className="bg-gray-50 p-8 shadow-sm border-l-4 border-gray-200 hover:border-yellow-400 hover:scale-105 transition-all duration-200 text-center group h-full flex flex-col"
                 >
+                  {/* Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#F3ED17' }}>
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}>
                       {feature.icon}
                     </div>
                   </div>
+
+                  {/* Content */}
                   <h3 className="text-xl font-bold text-gray-900 mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  
+                  <p className="text-gray-600 leading-relaxed flex-grow">
                     {feature.description}
                   </p>
                 </div>
@@ -167,7 +234,7 @@ export default function ChildServicePage({
         </div>
       </section>
 
-      {/* Bullet Points Section */}
+      {/* What's Included Section */}
       <section className="py-16 bg-white">
         <div className="w-full px-6 lg:px-12">
           <div className="max-w-7xl mx-auto">
@@ -178,15 +245,27 @@ export default function ChildServicePage({
               <div className="w-16 h-1 mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
             </div>
             
-            <div className="max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {bulletPoints.map((point, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <CheckCircle className="w-6 h-6 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
-                    <span className="text-lg text-gray-700">{point}</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              {bulletPoints.map((point, index) => (
+                <div 
+                  key={index}
+                  className="bg-gray-50 p-4 shadow-sm border-l-4 border-gray-200 hover:border-yellow-400 hover:scale-105 transition-all duration-200 group flex items-center space-x-4"
+                >
+                  {/* Icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}>
+                      <div className="text-black">
+                        {getIconForBulletPoint(point)}
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
+
+                  {/* Content */}
+                  <p className="text-gray-700 leading-relaxed flex-grow text-left">
+                    {point}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -275,6 +354,26 @@ export default function ChildServicePage({
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Read All Reviews Button */}
+          <div className="text-center mt-12">
+            <Link
+              href="/reviews"
+              className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+              style={{ 
+                backgroundColor: '#F3ED17',
+                transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+              }}
+            >
+              <span className="relative">
+                Read All Reviews
+                <span 
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                />
+              </span>
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </section>

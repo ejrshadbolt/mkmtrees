@@ -13,6 +13,9 @@ export default function AboutPage() {
         subtitle="Locally owned, expertly equipped, and known for getting it done right."
         backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=MKM+Trees+Team+at+Work"
         backgroundAlt="MKM Trees team working on tree removal and land clearing in Canterbury"
+        buttons={[
+          { text: 'Contact Us', href: '/contact', variant: 'primary' }
+        ]}
       />
       
       <StatsCounter />

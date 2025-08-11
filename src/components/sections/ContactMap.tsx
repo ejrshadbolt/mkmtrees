@@ -34,90 +34,99 @@ export default function ContactMap() {
         </div>
         
         {/* Right Side - Contact Information */}
-        <div className="flex items-center p-8 lg:p-16" style={{ backgroundColor: '#050608' }}>
+        <div className="flex items-center p-8 lg:p-16 bg-white">
           <div className="w-full">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Find Us & Service Areas
             </h2>
             <div className="w-16 h-1 mb-8" style={{ backgroundColor: '#F3ED17' }}></div>
 
             <div className="space-y-8 mb-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Get In Touch
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <Phone className="w-6 h-6 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F3ED17' }}>
+                      <Phone className="w-6 h-6 text-black" />
+                    </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Phone</p>
+                      <p className="text-sm text-gray-500 mb-1">Phone</p>
                       <Link
                         href={`tel:${businessConfig.contact.phone}`}
-                        className="text-lg font-semibold text-white hover:text-yellow-400 transition-colors"
+                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors"
                       >
                         {businessConfig.contact.phone}
                       </Link>
-                      <p className="text-sm text-gray-400 mt-1">Available 24/7 for emergencies</p>
+                      <p className="text-sm text-gray-500 mt-1">Available 24/7 for emergencies</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-4">
-                    <Mail className="w-6 h-6 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F3ED17' }}>
+                      <Mail className="w-6 h-6 text-black" />
+                    </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1">Email</p>
+                      <p className="text-sm text-gray-500 mb-1">Email</p>
                       <Link
                         href={`mailto:${businessConfig.contact.email}`}
-                        className="text-lg font-semibold text-white hover:text-yellow-400 transition-colors break-all"
+                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors break-all"
                       >
                         {businessConfig.contact.email}
                       </Link>
-                      <p className="text-sm text-gray-400 mt-1">Response within 24 hours</p>
+                      <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Service Coverage
                 </h3>
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F3ED17' }}>
+                    <MapPin className="w-6 h-6 text-black" />
+                  </div>
                   <div>
-                    <p className="text-lg font-semibold text-white mb-2">
+                    <p className="text-lg font-semibold text-gray-900 mb-2">
                       Canterbury & Surrounding Areas
                     </p>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
                       We service all of Canterbury from Christchurch city to rural high country stations. 
                       Including Selwyn District, Ashburton, Banks Peninsula, and surrounding areas.
                     </p>
                     <Link
                       href="/service-areas"
-                      className="inline-flex items-center text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 px-2 py-0.5 rounded relative group"
-                      style={{ color: '#F3ED17' }}
+                      className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group relative"
+                      style={{ backgroundColor: '#F3ED17' }}
                     >
-                      View All Service Areas
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                      <span 
-                        className="absolute bottom-0 left-2 right-2 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                        style={{ backgroundColor: '#F3ED17' }}
-                      />
+                      <span className="relative">
+                        View All Service Areas
+                        <span 
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                        />
+                      </span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Emergency Services
                 </h3>
                 <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 mt-1 flex-shrink-0" style={{ color: '#F3ED17' }} />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: '#F3ED17' }}>
+                    <Clock className="w-6 h-6 text-black" />
+                  </div>
                   <div>
-                    <p className="text-lg font-semibold text-white mb-2">
+                    <p className="text-lg font-semibold text-gray-900 mb-2">
                       24/7 Emergency Callouts
                     </p>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed">
                       Storm damage, fallen trees, blocked access - we&apos;re available around the clock 
                       for urgent tree service emergencies across Canterbury.
                     </p>
@@ -127,14 +136,19 @@ export default function ContactMap() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="pt-8 border-t border-gray-700">
+            <div className="pt-8 border-t border-gray-200">
               <Link
                 href={`tel:${businessConfig.contact.phone}`}
-                className="inline-flex items-center px-8 py-4 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group text-lg"
+                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group text-lg relative"
                 style={{ backgroundColor: '#F3ED17' }}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Call for Emergency Support
+                <span className="relative">
+                  Call for Emergency Support
+                  <span 
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  />
+                </span>
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>

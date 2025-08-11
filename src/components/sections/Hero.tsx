@@ -57,14 +57,18 @@ export default function Hero({
               <Link
                 key={index}
                 href={button.href}
-                className={`px-6 py-3 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 whitespace-nowrap ${
-                  button.variant === 'primary'
-                    ? 'text-black hover:opacity-90 focus:ring-yellow-400'
-                    : 'text-white border-2 border-white hover:bg-white hover:text-black focus:ring-white'
-                }`}
-                style={button.variant === 'primary' ? { backgroundColor: '#F3ED17' } : undefined}
+                className="px-5 py-2 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow whitespace-nowrap relative group"
+                style={{ 
+                  backgroundColor: '#F3ED17',
+                  transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                }}
               >
-                {button.text}
+                <span className="relative">
+                  {button.text}
+                  <span 
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                  />
+                </span>
               </Link>
             ))}
           </div>

@@ -1,79 +1,140 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 
-const portfolioImages = [
+const portfolioProjects = [
   {
-    src: "https://placehold.co/400x300/2d5016/ffffff?text=Tree+Removal+Project",
-    alt: "Professional tree removal in Canterbury",
-    title: "Urban Tree Removal"
+    id: 1,
+    title: "Urban Tree Removal",
+    slug: "urban-tree-removal",
+    description: "Professional tree removal and stump grinding in central Canterbury suburban property.",
+    client_name: "Christchurch Homeowner",
+    featured_image: "https://placehold.co/400x300/2d5016/ffffff?text=Tree+Removal+Project"
   },
   {
-    src: "https://placehold.co/400x300/4a5568/ffffff?text=Land+Clearing+Project",
-    alt: "Land clearing and earthworks in Selwyn",
-    title: "Lifestyle Block Clearing"
-  },
-  {
-    src: "https://placehold.co/400x300/8b4513/ffffff?text=Emergency+Callout",
-    alt: "Emergency storm cleanup in Banks Peninsula",
-    title: "Storm Damage Cleanup"
+    id: 2,
+    title: "Lifestyle Block Clearing",
+    slug: "lifestyle-block-clearing",
+    description: "Complete land clearing and earthworks for lifestyle block development in Selwyn district.",
+    client_name: "Rural Canterbury",
+    featured_image: "https://placehold.co/400x300/4a5568/ffffff?text=Land+Clearing+Project"
   }
 ];
 
 export default function PortfolioPreview() {
   return (
-    <section className="py-16 bg-white">
-      <div className="w-full px-6 lg:px-12">
-        {/* Title */}
-        <div className="mb-16">
+    <section className="bg-white">
+      {/* White title strip */}
+      <div className="w-full py-6 px-6 lg:px-12 bg-white">
+        <div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Recent Work
           </h2>
-          <div className="w-16 h-1 mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
-          <p className="text-lg text-gray-600 max-w-3xl">
-            See our latest tree services and land clearing projects across Canterbury.
-          </p>
+          <div className="w-16 h-1" style={{ backgroundColor: '#F3ED17' }}></div>
         </div>
-
-        {/* Images Grid - Full Width */}
-        <div className="w-full -mx-6 lg:-mx-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            {portfolioImages.map((image, index) => (
-              <div 
-                key={index}
-                className="group relative overflow-hidden bg-gray-200 aspect-[16/9] hover:scale-[1.02] transition-all duration-300"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300"></div>
+      </div>
+        
+      {portfolioProjects.map((project, index) => {
+        const isEven = index % 2 === 0;
+        
+        return (
+          <div
+            key={project.id}
+            className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]"
+          >
+            {/* Image Column */}
+            <Link 
+              href={`/portfolio/${project.slug}`}
+              className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200 cursor-pointer focus-visible-ring focus-ring-yellow`}
+            >
+              <Image
+                src={project.featured_image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </Link>
+            
+            {/* Content Column */}
+            <div className={`${isEven ? 'order-2' : 'order-1'} bg-white flex items-center p-8 lg:p-16`}>
+              <div className="w-full space-y-6">
+                <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
+                  {project.client_name}
+                </div>
                 
-                {/* Title Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h3 className="text-2xl font-bold transition-colors duration-300 group-hover:text-yellow-400">
-                    {image.title}
-                  </h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+                  {project.title}
+                </h3>
+                
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  {project.description}
+                </p>
+                
+                <div className="pt-4">
+                  <Link
+                    href={`/portfolio/${project.slug}`}
+                    className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+                    style={{ 
+                      backgroundColor: '#F3ED17',
+                      transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                    }}
+                  >
+                    <span className="relative">
+                      View Project
+                      <span 
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                      />
+                    </span>
+                    <svg
+                      className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-
-        {/* View Portfolio Button */}
-        <div className="text-center mt-12">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center px-8 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group"
-            style={{ backgroundColor: '#F3ED17' }}
+        );
+      })}
+        
+      {/* View All Portfolio Link */}
+      <div className="text-center py-12 px-6 lg:px-12 bg-white">
+        <Link
+          href="/portfolio"
+          className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+          style={{ 
+            backgroundColor: '#F3ED17',
+            transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+          }}
+        >
+          <span className="relative">
+            View All Projects
+            <span 
+              className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+            />
+          </span>
+          <svg
+            className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            View Portfolio
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </Link>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </Link>
       </div>
     </section>
   );

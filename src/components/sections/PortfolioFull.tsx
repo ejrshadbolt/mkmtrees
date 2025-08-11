@@ -30,14 +30,17 @@ export default function PortfolioFull({
             className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]"
           >
             {/* Image Column */}
-            <div className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200`}>
+            <Link 
+              href={`/portfolio/${project.slug}`}
+              className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200 cursor-pointer focus-visible-ring focus-ring-yellow`}
+            >
               <Image
                 src={project.featured_image}
                 alt={project.title}
                 fill
                 className="object-cover transition-transform duration-300 hover:scale-105"
               />
-            </div>
+            </Link>
             
             {/* Content Column */}
             <div className={`${isEven ? 'order-2' : 'order-1'} bg-white flex items-center p-8 lg:p-16`}>
@@ -57,12 +60,20 @@ export default function PortfolioFull({
                 <div className="pt-4">
                   <Link
                     href={`/portfolio/${project.slug}`}
-                    className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group"
-                    style={{ backgroundColor: '#F3ED17' }}
+                    className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+                    style={{ 
+                      backgroundColor: '#F3ED17',
+                      transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                    }}
                   >
-                    View Project Details
+                    <span className="relative">
+                      View Project Details
+                      <span 
+                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                      />
+                    </span>
                     <svg
-                      className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                      className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -82,12 +93,19 @@ export default function PortfolioFull({
         );
       })}
         
-      {/* Bottom strip */}
-      <div className="text-center py-6 px-6 lg:px-12" style={{ backgroundColor: '#050608' }}>
-        <p className="text-white text-lg">
-          Need expert tree services or land clearing? We&apos;re ready to tackle your next project.
-        </p>
-      </div>
+      {/* White section to break up the layout */}
+      <section className="py-16 bg-white">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Every Project Tells a Story
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              From emergency tree removal to large-scale land clearing, each project showcases our commitment to safety, precision, and results. Browse our completed work across Canterbury to see the MKM Trees difference.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

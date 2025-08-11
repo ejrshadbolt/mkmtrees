@@ -25,8 +25,7 @@ export default function Header() {
               {/* Logo */}
               <Link 
                 href="/" 
-                className="flex items-center text-xl font-bold text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md"
-                style={{ '--tw-ring-color': '#F3ED17' } as React.CSSProperties}
+                className="flex items-center text-xl font-bold text-white hover:opacity-80 focus-visible-ring focus-ring-dark rounded-md"
                 aria-label={`${businessConfig.name} - Home`}
               >
                 {businessConfig.branding.logo && (
@@ -44,8 +43,7 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset"
-                style={{ '--tw-ring-color': '#F3ED17' } as React.CSSProperties}
+                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus-visible-ring focus-ring-dark"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -69,8 +67,7 @@ export default function Header() {
             <div className="flex-shrink-0 flex items-center">
               <Link 
                 href="/" 
-                className="flex items-center text-xl font-bold text-white hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md"
-                style={{ '--tw-ring-color': '#F3ED17' } as React.CSSProperties}
+                className="flex items-center text-xl font-bold text-white hover:opacity-80 focus-visible-ring focus-ring-dark rounded-md"
                 aria-label={`${businessConfig.name} - Home`}
               >
                 {businessConfig.branding.logo && (
@@ -92,16 +89,17 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white px-3 py-2 text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md relative group"
+                  className="text-white px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md relative group"
                   style={{ 
-                    '--tw-ring-color': '#F3ED17',
                     color: pathname === item.href ? '#F3ED17' : '#FFFFFF'
                   } as React.CSSProperties}
                   aria-current={pathname === item.href ? 'page' : undefined}
                 >
                   {item.name}
                   <span 
-                    className="absolute bottom-0 left-3 right-3 h-0.5 bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                    className={`absolute bottom-0 left-3 right-3 h-0.5 bg-current transform transition-transform duration-200 origin-left ${
+                      pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
                     style={{ backgroundColor: '#F3ED17' }}
                   />
                 </Link>
@@ -112,10 +110,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center ml-6">
               <Link
                 href={`tel:${businessConfig.contact.phone.replace(/\s/g, '')}`}
-                className="flex items-center space-x-2 text-white font-medium transition-all duration-200 focus:outline-none focus:ring-2 rounded-md px-3 py-2 relative group hover-yellow"
-                style={{
-                  '--tw-ring-color': '#F3ED17'
-                } as React.CSSProperties}
+                className="flex items-center space-x-2 text-white font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md px-3 py-2 relative group hover-yellow"
               >
                 <Phone 
                   className="h-4 w-4 fill-current transition-colors duration-200" 
@@ -143,16 +138,17 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 relative group"
+                className="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 focus-visible-ring focus-ring-dark relative group"
                 style={{ 
-                  '--tw-ring-color': '#F3ED17',
                   color: pathname === item.href ? '#F3ED17' : '#FFFFFF'
                 } as React.CSSProperties}
                 aria-current={pathname === item.href ? 'page' : undefined}
               >
                 {item.name}
                 <span 
-                  className="absolute bottom-1 left-3 right-3 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
+                  className={`absolute bottom-1 left-3 right-3 h-0.5 transform transition-transform duration-200 origin-left ${
+                    pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`}
                   style={{ backgroundColor: '#F3ED17' }}
                 />
               </Link>
@@ -163,10 +159,7 @@ export default function Header() {
               <Link
                 href={`tel:${businessConfig.contact.phone.replace(/\s/g, '')}`}
                 onClick={closeMobileMenu}
-                className="flex items-center space-x-2 font-medium px-3 py-2 rounded-md transition-all duration-200 text-white focus:outline-none focus:ring-2 relative group hover-yellow"
-                style={{
-                  '--tw-ring-color': '#F3ED17'
-                } as React.CSSProperties}
+                className="flex items-center space-x-2 font-medium px-3 py-2 rounded-md transition-all duration-200 text-white focus-visible-ring focus-ring-dark relative group hover-yellow"
               >
                 <Phone className="h-4 w-4 fill-current transition-colors duration-200" style={{ color: 'inherit' }} />
                 <span className="transition-colors duration-200">{businessConfig.contact.phone}</span>

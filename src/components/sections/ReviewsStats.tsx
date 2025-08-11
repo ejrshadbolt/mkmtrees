@@ -111,32 +111,24 @@ export default function ReviewsStats() {
     <section className="py-16 bg-white">
       <div className="w-full px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {reviewStats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <div key={index} className="flex items-start space-x-6">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
+                <div key={index} className="text-center">
+                  <div className="flex justify-center mb-4">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#F3ED17' }}>
                       <IconComponent className="w-8 h-8 text-black" />
                     </div>
                   </div>
-                  
-                  {/* Content */}
-                  <div className="flex-grow">
-                    <Counter 
-                      target={stat.number} 
-                      suffix={stat.suffix} 
-                      isAnimated={stat.isAnimated}
-                    />
-                    <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">
-                      {stat.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {stat.description}
-                    </p>
-                  </div>
+                  <Counter 
+                    target={stat.number} 
+                    suffix={stat.suffix} 
+                    isAnimated={stat.isAnimated}
+                  />
+                  <p className="text-gray-600 text-lg mt-2 font-medium">
+                    {stat.title}
+                  </p>
                 </div>
               );
             })}

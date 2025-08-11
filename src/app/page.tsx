@@ -14,45 +14,45 @@ export default async function HomePage() {
   const services = [
     {
       title: 'Tree Topping / Vegetation Management',
-      description: 'Professional tree topping and vegetation control for safe, healthy landscapes',
+      description: 'Tall tree topping and vegetation control for rural properties and lifestyle blocks',
       image: 'https://placehold.co/600x400/2d5016/ffffff?text=Tree+Topping',
       imageAlt: 'Tree topping and vegetation management services',
-      href: '/services/tree-topping-vegetation-management'
+      href: '/tree-topping-vegetation-management-canterbury'
     },
     {
       title: 'Tree Services',
-      description: 'Expert arborist services including stump grinding, tree reductions, and more',
+      description: 'Qualified arborists providing stump grinding, tree reductions, and expert tree care',
       image: 'https://placehold.co/600x400/4a5568/ffffff?text=Tree+Services',
       imageAlt: 'Professional tree services and arborist work',
-      href: '/services/tree-services'
+      href: '/tree-services-canterbury'
     },
     {
       title: 'Earthworks',
-      description: 'Land clearing, station work, and heavy-duty tilling for all property types',
+      description: 'Land clearing, station work, and heavy-duty tilling for Canterbury properties',
       image: 'https://placehold.co/600x400/8b4513/ffffff?text=Earthworks',
       imageAlt: 'Earthworks and land clearing equipment',
-      href: '/services/earthworks'
+      href: '/earthworks-canterbury'
     },
     {
       title: 'Emergency Callouts',
-      description: '24/7 emergency response for urgent tree and earthworks situations',
+      description: 'Rapid response for urgent tree and earthworks situations across Canterbury',
       image: 'https://placehold.co/600x400/dc2626/ffffff?text=Emergency',
       imageAlt: 'Emergency tree services and callouts',
-      href: '/services/emergency-callouts'
+      href: '/emergency-callouts-canterbury'
     },
     {
       title: 'Wood Chip & Fire Wood',
-      description: 'Premium wood chips for landscaping and seasoned firewood for heating',
+      description: 'Premium wood chips, seasoned firewood, mulch, and calf bedding delivered',
       image: 'https://placehold.co/600x400/92400e/ffffff?text=Wood+Chips',
       imageAlt: 'Wood chips and firewood products',
-      href: '/services/wood-chip-fire-wood'
+      href: '/wood-chip-firewood-canterbury'
     },
     {
       title: 'Mulching',
-      description: 'Heavy-duty mulching services for paddocks, gorse, and slash clearing',
+      description: 'Heavy-duty paddock mulching, gorse clearing, and slash processing services',
       image: 'https://placehold.co/600x400/365314/ffffff?text=Mulching',
       imageAlt: 'Mulching services and equipment',
-      href: '/services/mulching'
+      href: '/mulching-canterbury'
     }
   ];
 
@@ -176,14 +176,14 @@ export default async function HomePage() {
         backgroundImage="https://placehold.co/1920x1080/4a5568/ffffff?text=Tree+Service+Landscape"
         backgroundAlt="Professional tree service equipment and landscape"
         buttons={[
-          { text: 'About Us', href: '/about', variant: 'secondary' },
-          { text: 'Contact Us', href: '/contact', variant: 'secondary' },
-          { text: 'Get a Quote', href: '/contact', variant: 'primary' }
+          { text: 'About Us', href: '/about', variant: 'primary' },
+          { text: 'Contact Us', href: '/contact', variant: 'primary' }
         ]}
       />
       
       <ServiceTiles
         title="Our Services"
+        subtitle="From precise tree topping to full-scale land clearing, we've got Canterbury covered with professional equipment and qualified expertise for every job."
         services={services}
       />
       
@@ -194,13 +194,11 @@ export default async function HomePage() {
       
       <About
         title="A Bit More About MKM Trees"
-        content="MKM Trees is a locally owned and operated business proudly serving Christchurch and the wider Canterbury region. We specialise in tree topping, vegetation management, land clearing, earthworks, and selective emergency callouts — all delivered by a reliable local crew who know the land.
+        content="MKM Trees is a locally owned business serving Christchurch and Canterbury. We specialise in tree topping, vegetation management, land clearing, earthworks, and emergency callouts — delivered by a reliable local crew who know the land.
 
-With qualified arborists, experienced operators, and a brand-new fleet of specialised gear, we're built for everything from tight suburban jobs to full-scale clearing on lifestyle blocks and farms. We regularly work on remote and rugged properties where access, safety, and fast turnaround matter most.
+With qualified arborists and a brand-new fleet of specialised gear, we handle everything from suburban jobs to full-scale clearing on lifestyle blocks and farms. We regularly work on remote properties where access, safety, and fast turnaround matter most.
 
-Our close-knit team is known for being hardworking, honest, and easy to deal with. Every job is completed to a high standard — with care, efficiency, and respect for your property.
-
-We're also proud to hold Gold SiteWise certification, backing our commitment to top-tier health and safety on every site.
+Our team is known for being hardworking, honest, and easy to deal with. Every job is completed to a high standard with care and respect for your property. We're proud to hold Gold SiteWise certification, backing our commitment to top-tier safety.
 
 If you're after a team with real experience, serious gear, and a reputation for quality, MKM Trees is ready when you are."
         image="https://placehold.co/800x600/4a5568/ffffff?text=MKM+Trees+Team"

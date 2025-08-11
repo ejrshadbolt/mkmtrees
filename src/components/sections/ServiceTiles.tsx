@@ -11,10 +11,11 @@ interface ServiceTile {
 
 interface ServiceTilesProps {
   title?: string;
+  subtitle?: string;
   services: ServiceTile[];
 }
 
-export default function ServiceTiles({ title, services }: ServiceTilesProps) {
+export default function ServiceTiles({ title, subtitle, services }: ServiceTilesProps) {
   return (
     <section className="py-16 bg-white">
       <div className="w-full px-6 lg:px-12">
@@ -23,7 +24,12 @@ export default function ServiceTiles({ title, services }: ServiceTilesProps) {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
               {title}
             </h2>
-            <div className="w-16 h-1" style={{ backgroundColor: '#F3ED17' }}></div>
+            <div className="w-16 h-1 mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
+            {subtitle && (
+              <p className="text-lg text-gray-600 max-w-3xl">
+                {subtitle}
+              </p>
+            )}
           </div>
         )}
       </div>
@@ -51,9 +57,12 @@ export default function ServiceTiles({ title, services }: ServiceTilesProps) {
 
               {/* Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#F3ED17]">
+                <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#F3ED17]">
                   {service.title}
                 </h3>
+                <p className="text-sm text-gray-200 leading-relaxed">
+                  {service.description}
+                </p>
               </div>
 
               {/* Hover Effect Border */}

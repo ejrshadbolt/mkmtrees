@@ -95,7 +95,7 @@ function Counter({ target, suffix, isAnimated }: { target: number; suffix: strin
   }, [target, hasStarted, hasCompleted, isAnimated]);
 
   return (
-    <span ref={elementRef} className="text-4xl md:text-5xl font-bold text-white">
+    <span ref={elementRef} className="text-4xl md:text-5xl font-bold text-gray-900">
       {count}{suffix}
     </span>
   );
@@ -103,7 +103,7 @@ function Counter({ target, suffix, isAnimated }: { target: number; suffix: strin
 
 export default function StatsCounter() {
   return (
-    <section style={{ backgroundColor: '#050608' }} className="py-16">
+    <section className="bg-white py-16">
       <div className="w-full px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -121,7 +121,7 @@ export default function StatsCounter() {
                     suffix={stat.suffix} 
                     isAnimated={stat.isAnimated}
                   />
-                  <p className="text-gray-300 text-lg mt-2 font-medium">
+                  <p className="text-gray-600 text-lg mt-2 font-medium">
                     {stat.label}
                   </p>
                 </div>

@@ -44,7 +44,7 @@ export default function Footer() {
             {/* Company Information */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <Link href="/" className="text-3xl font-bold text-white">
+                <Link href="/" className="text-3xl font-bold text-white focus-visible-ring focus-ring-dark rounded-md">
                   {businessConfig.name}
                 </Link>
                 <div className="w-16 h-1 mt-3" style={{ backgroundColor: '#F3ED17' }}></div>
@@ -70,7 +70,7 @@ export default function Footer() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-black transition-all duration-200 hover:scale-110"
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-black transition-all duration-200 hover:scale-110 focus-visible-ring focus-ring-yellow"
                       style={{ backgroundColor: '#F3ED17' }}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block"
+                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md"
                     >
                       <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                       <span className="relative">
@@ -113,7 +113,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/services/tree-topping-vegetation-management" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                  <Link href="/tree-topping-vegetation-management-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Tree Topping / Vegetation Management
@@ -122,7 +122,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/tree-services" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                  <Link href="/tree-services-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Tree Services
@@ -131,7 +131,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/earthworks" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                  <Link href="/earthworks-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Earthworks
@@ -140,7 +140,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/emergency-callouts" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                  <Link href="/emergency-callouts-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Emergency Callouts
@@ -149,7 +149,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/mulching" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block">
+                  <Link href="/mulching-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Mulching
@@ -172,7 +172,7 @@ export default function Footer() {
                     <p className="text-sm text-gray-400 mb-1">Phone</p>
                     <Link
                       href={`tel:${businessConfig.contact.phone}`}
-                      className="text-white hover:text-gray-300 transition-colors font-semibold"
+                      className="text-white hover:text-gray-300 transition-colors font-semibold focus-visible-ring focus-ring-dark rounded-md"
                     >
                       {businessConfig.contact.phone}
                     </Link>
@@ -185,7 +185,7 @@ export default function Footer() {
                     <p className="text-sm text-gray-400 mb-1">Email</p>
                     <Link
                       href={`mailto:${businessConfig.contact.email}`}
-                      className="text-white hover:text-gray-300 transition-colors font-semibold break-all"
+                      className="text-white hover:text-gray-300 transition-colors font-semibold break-all focus-visible-ring focus-ring-dark rounded-md"
                     >
                       {businessConfig.contact.email}
                     </Link>
