@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "small-business-cms",
+	"name": "mkm-trees",
 	"compatibility_date": "2025-03-01",
 	"compatibility_flags": [
 		"nodejs_compat"
@@ -16,7 +16,7 @@
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "small_business_cms",
+			"database_name": "mkm-trees-db",
 			"database_id": "YOUR_DATABASE_ID_HERE",
 			"preview_database_id": "YOUR_PREVIEW_DATABASE_ID_HERE"
 		}
@@ -24,8 +24,8 @@
 	"r2_buckets": [
 		{
 			"binding": "MEDIA_BUCKET",
-			"bucket_name": "small-business-media",
-			"preview_bucket_name": "small-business-media-preview"
+			"bucket_name": "mkm-trees-media",
+			"preview_bucket_name": "mkm-trees-media-preview"
 		}
 	],
 	/**
@@ -47,14 +47,14 @@
 			"d1_databases": [
 				{
 					"binding": "DB",
-					"database_name": "small_business_cms",
+					"database_name": "mkm-trees-db",
 					"database_id": "YOUR_DATABASE_ID_HERE"
 				}
 			],
 			"r2_buckets": [
 				{
 					"binding": "MEDIA_BUCKET",
-					"bucket_name": "small-business-media"
+					"bucket_name": "mkm-trees-media"
 				}
 			]
 		},
@@ -65,14 +65,14 @@
 			"d1_databases": [
 				{
 					"binding": "DB",
-					"database_name": "small_business_cms",
+					"database_name": "mkm-trees-db",
 					"database_id": "YOUR_DATABASE_ID_HERE"
 				}
 			],
 			"r2_buckets": [
 				{
 					"binding": "MEDIA_BUCKET",
-					"bucket_name": "small-business-media-preview"
+					"bucket_name": "mkm-trees-media-preview"
 				}
 			]
 		}

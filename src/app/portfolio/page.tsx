@@ -7,7 +7,14 @@ import { fallbackProjects } from '@/data/fallback-data';
 
 export default async function PortfolioPage() {
   // Get all portfolio projects - try database first, fallback to static data
-  let portfolioProjects = [];
+  let portfolioProjects: Array<{
+    id: number;
+    title: string;
+    slug: string;
+    description: string;
+    client_name: string;
+    featured_image: string;
+  }> = [];
   try {
     const context = getRequestContext();
     if (context?.env?.DB) {
@@ -24,7 +31,7 @@ export default async function PortfolioPage() {
         featured_image: project.featured_image_id ? `/api/media/${project.featured_image_id}` : '/images/placeholder-project.jpg'
       }));
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback portfolio data');
   }
 

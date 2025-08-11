@@ -1,7 +1,7 @@
 import { Shield, Mountain, Sparkles, Clock, Award } from 'lucide-react';
 
 interface ValueItem {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
 }

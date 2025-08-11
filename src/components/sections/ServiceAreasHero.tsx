@@ -30,10 +30,10 @@ export default function ServiceAreasHero() {
               
               <div className="text-lg text-gray-600 leading-relaxed space-y-4">
                 <p>
-                  MKM Trees provides professional arborist and land maintenance services across the wider Canterbury region. From Christchurch's suburbs to the back blocks of Banks Peninsula and Selwyn's high country farms, we deliver safe, certified work with the right gear for any terrain.
+                  MKM Trees provides professional arborist and land maintenance services across the wider Canterbury region. From Christchurch&apos;s suburbs to the back blocks of Banks Peninsula and Selwyn&apos;s high country farms, we deliver safe, certified work with the right gear for any terrain.
                 </p>
                 <p className="font-medium">
-                  If you're looking for local expertise in tree care, emergency cleanups, or land clearing, we're already working near you.
+                  If you&apos;re looking for local expertise in tree care, emergency cleanups, or land clearing, we&apos;re already working near you.
                 </p>
               </div>
             </div>

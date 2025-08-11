@@ -37,7 +37,7 @@ export default function ServiceAreasList() {
           {/* Bottom CTA */}
           <div className="text-center mt-12 p-8 bg-gray-50 rounded-lg">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Don't See Your Area Listed?
+              Don&apos;t See Your Area Listed?
             </h3>
             <p className="text-lg text-gray-600 mb-6">
               We service the wider Canterbury region and are always expanding our coverage. 

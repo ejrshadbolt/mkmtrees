@@ -16,15 +16,15 @@ interface BlogTilesProps {
 }
 
 export default function BlogTiles({ title, posts }: BlogTilesProps) {
-  const formatDate = (timestamp?: number) => {
-    if (!timestamp) return '';
-    const date = new Date(timestamp * 1000);
-    return date.toLocaleDateString('en-NZ', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
+  // const formatDate = (timestamp?: number) => {
+  //   if (!timestamp) return '';
+  //   const date = new Date(timestamp * 1000);
+  //   return date.toLocaleDateString('en-NZ', { 
+  //     year: 'numeric', 
+  //     month: 'long', 
+  //     day: 'numeric' 
+  //   });
+  // };
 
   return (
     <section className="py-16 bg-white">

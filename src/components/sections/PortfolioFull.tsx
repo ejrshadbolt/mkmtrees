@@ -1,8 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getRequestContext } from '@cloudflare/next-on-pages';
-import { createDbService } from '@/lib/db';
-import { fallbackProjects } from '@/data/fallback-data';
 
 interface PortfolioProject {
   id: number;
@@ -19,7 +16,6 @@ interface PortfolioFullProps {
 }
 
 export default function PortfolioFull({ 
-  title = "Our Recent Projects",
   projects 
 }: PortfolioFullProps) {
   return (
@@ -89,7 +85,7 @@ export default function PortfolioFull({
       {/* Bottom strip */}
       <div className="text-center py-6 px-6 lg:px-12" style={{ backgroundColor: '#050608' }}>
         <p className="text-white text-lg">
-          Need expert tree services or land clearing? We're ready to tackle your next project.
+          Need expert tree services or land clearing? We&apos;re ready to tackle your next project.
         </p>
       </div>
     </section>

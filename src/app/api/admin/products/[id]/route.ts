@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../../../auth/[...nextauth]/route';
+import { auth } from '@/lib/auth';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import { createDbService } from '@/lib/db';
 
-export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
+export const runtime = 'edge';
+
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -17,7 +19,7 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
     }
 
     const dbService = createDbService(context.env.DB);
-    const product = await dbService.getProductById(parseInt(params.id));
+    const product = await dbService.getProductById(parseInt(id));
 
     if (!product) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 });
@@ -30,9 +32,10 @@ export async function GET(request: NextRequest, { params }: { params: { id: stri
   }
 }
 
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -42,7 +45,19 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ error: 'Database not available' }, { status: 500 });
     }
 
-    const data = await request.json();
+    const data = await request.json() as {
+      name?: string;
+      slug?: string;
+      description?: string;
+      short_description?: string;
+      featured_image_id?: number;
+      category?: string;
+      sizes?: string[];
+      base_price?: string | number;
+      price_unit?: string;
+      available?: boolean;
+      sort_order?: string | number;
+    };
     const {
       name,
       slug,
@@ -63,7 +78,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     }
 
     const dbService = createDbService(context.env.DB);
-    await dbService.updateProduct(parseInt(params.id), {
+    await dbService.updateProduct(parseInt(id), {
       name,
       slug,
       description,
@@ -71,10 +86,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       featured_image_id,
       category,
       sizes: JSON.stringify(sizes || []),
-      base_price: parseFloat(base_price),
+      base_price: parseFloat(base_price as string),
       price_unit,
       available,
-      sort_order: parseInt(sort_order) || 0
+      sort_order: parseInt(String(sort_order)) || 0
     });
 
     return NextResponse.json({ success: true });
@@ -84,9 +99,10 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
   }
 }
 
-export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -96,15 +112,15 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
       return NextResponse.json({ error: 'Database not available' }, { status: 500 });
     }
 
-    const data = await request.json();
+    const data = await request.json() as { available?: boolean; sort_order?: string };
     const dbService = createDbService(context.env.DB);
     
     // For partial updates, we only update the fields provided
-    const updateData: any = {};
+    const updateData: Record<string, unknown> = {};
     if ('available' in data) updateData.available = data.available;
-    if ('sort_order' in data) updateData.sort_order = parseInt(data.sort_order);
+    if ('sort_order' in data) updateData.sort_order = parseInt(String(data.sort_order));
 
-    await dbService.updateProduct(parseInt(params.id), updateData);
+    await dbService.updateProduct(parseInt(id), updateData);
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -113,9 +129,10 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -126,7 +143,7 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
     }
 
     const dbService = createDbService(context.env.DB);
-    await dbService.deleteProduct(parseInt(params.id));
+    await dbService.deleteProduct(parseInt(id));
 
     return NextResponse.json({ success: true });
   } catch (error) {

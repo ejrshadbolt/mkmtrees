@@ -32,7 +32,7 @@ export default function AdminProductsPage() {
     try {
       const response = await fetch('/api/admin/products');
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json() as { products?: Product[] };
         setProducts(data.products || []);
       } else {
         throw new Error('Failed to fetch products');

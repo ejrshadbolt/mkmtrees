@@ -61,7 +61,7 @@ export default function Reviews({ title, subtitle, reviews }: ReviewsProps) {
 
                 {/* Review Content */}
                 <blockquote className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
-                  "{review.content}"
+                  &ldquo;{review.content}&rdquo;
                 </blockquote>
 
                 {/* Reviewer Info */}

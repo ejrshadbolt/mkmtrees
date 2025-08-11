@@ -8,13 +8,16 @@ import { fallbackProducts } from '@/data/fallback-data';
 import ContactSection from '@/components/sections/ContactSection';
 import { businessConfig } from '@/config/business';
 
+export const runtime = 'edge';
+
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
   // Get the specific product - try database first, fallback to static data
   let product = null;
   
@@ -22,7 +25,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     const context = getRequestContext();
     if (context?.env?.DB) {
       const dbService = createDbService(context.env.DB);
-      const dbProduct = await dbService.getProductBySlug(params.slug);
+      const dbProduct = await dbService.getProductBySlug(slug);
       
       if (dbProduct) {
         product = {
@@ -32,13 +35,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
         };
       }
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback product data');
   }
 
   // If no database product, check fallback data
   if (!product) {
-    const fallbackProduct = fallbackProducts.find(p => p.slug === params.slug);
+    const fallbackProduct = fallbackProducts.find(p => p.slug === slug);
     if (fallbackProduct) {
       product = {
         ...fallbackProduct,
@@ -117,7 +120,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                       <h3 className="text-lg font-semibold text-gray-900">Available Sizes</h3>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {product.sizes.map((size, index) => (
+                      {product.sizes.map((size: string, index: number) => (
                         <div
                           key={index}
                           className="flex items-center p-3 bg-white border border-gray-200 rounded-lg hover:border-yellow-400 transition-colors"

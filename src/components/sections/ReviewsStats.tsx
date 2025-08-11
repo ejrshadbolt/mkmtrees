@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { TreesIcon as Tree, Truck, Clock, Users } from 'lucide-react';
 
 interface ReviewStat {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   number: number;
   suffix: string;
   title: string;

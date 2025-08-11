@@ -1,0 +1,27 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "mkm-trees",
+	"compatibility_date": "2025-03-01",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"pages_build_output_dir": ".vercel/output/static",
+	"observability": {
+		"enabled": true
+	},
+	"vars": { 
+		"ENVIRONMENT": "development" 
+	},
+	"env": {
+		"production": {
+			"vars": {
+				"ENVIRONMENT": "production"
+			}
+		},
+		"preview": {
+			"vars": {
+				"ENVIRONMENT": "preview"
+			}
+		}
+	}
+}

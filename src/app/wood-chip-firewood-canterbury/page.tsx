@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DollarSign, Truck, CheckCircle2, Clock } from 'lucide-react';
@@ -9,7 +8,19 @@ import ContactSection from '@/components/sections/ContactSection';
 
 export default async function WoodChipFirewoodPage() {
   // Get products - try database first, fallback to static data
-  let products = [];
+  let products: Array<{
+    id: number;
+    name: string;
+    slug: string;
+    description: string;
+    short_description?: string;
+    category: string;
+    sizes: string[];
+    base_price: number;
+    price_unit: string;
+    available: boolean;
+    featured_image?: string;
+  }> = [];
   
   try {
     const context = getRequestContext();
@@ -25,7 +36,7 @@ export default async function WoodChipFirewoodPage() {
         }));
       }
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback product data');
   }
 

@@ -7,13 +7,16 @@ import { createDbService } from '@/lib/db';
 import { fallbackPosts } from '@/data/fallback-data';
 import ContactSection from '@/components/sections/ContactSection';
 
+export const runtime = 'edge';
+
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
   // Get the specific blog post - try database first, fallback to static data
   let post = null;
   
@@ -21,7 +24,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const context = getRequestContext();
     if (context?.env?.DB) {
       const dbService = createDbService(context.env.DB);
-      const dbPost = await dbService.getPostBySlug(params.slug);
+      const dbPost = await dbService.getPostBySlug(slug);
       
       if (dbPost) {
         post = {
@@ -32,17 +35,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           content: dbPost.content,
           featured_image: dbPost.featured_image_id ? `/api/media/${dbPost.featured_image_id}` : undefined,
           published_at: dbPost.published_at,
-          tags: dbPost.tags || []
+          tags: [] // Tags would be fetched separately
         };
       }
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback blog post data');
   }
 
   // If no database post, check fallback data
   if (!post) {
-    const fallbackPost = fallbackPosts.find(p => p.slug === params.slug);
+    const fallbackPost = fallbackPosts.find(p => p.slug === slug);
     if (fallbackPost) {
       post = {
         id: fallbackPost.id,
@@ -62,7 +65,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   // Format the date
-  const publishDate = new Date(post.published_at * 1000).toLocaleDateString('en-NZ', {
+  const publishDate = new Date((post.published_at || Date.now()) * 1000).toLocaleDateString('en-NZ', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'

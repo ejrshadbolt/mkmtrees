@@ -53,7 +53,7 @@ export default function ContactMethods() {
             </h2>
             <div className="w-16 h-1 mx-auto mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Choose the contact method that works best for you. We're here to help with all your tree service and land clearing needs.
+              Choose the contact method that works best for you. We&apos;re here to help with all your tree service and land clearing needs.
             </p>
           </div>
 

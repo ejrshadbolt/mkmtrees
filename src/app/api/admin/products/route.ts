@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../../auth/[...nextauth]/route';
+import { auth } from '@/lib/auth';
 import { getRequestContext } from '@cloudflare/next-on-pages';
 import { createDbService } from '@/lib/db';
 
+export const runtime = 'edge';
+
 export async function GET() {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -17,9 +18,7 @@ export async function GET() {
     }
 
     const dbService = createDbService(context.env.DB);
-    const products = await dbService.db.prepare('SELECT * FROM products ORDER BY sort_order ASC, created_at DESC')
-      .all()
-      .then((result: any) => result.results);
+    const products = await dbService.getAllProducts();
 
     return NextResponse.json({ products });
   } catch (error) {
@@ -30,7 +29,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const session = await auth();
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -40,7 +39,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Database not available' }, { status: 500 });
     }
 
-    const data = await request.json();
+    const data = await request.json() as {
+      name?: string;
+      slug?: string;
+      description?: string;
+      short_description?: string;
+      featured_image_id?: number;
+      category?: string;
+      sizes?: string[];
+      base_price?: string;
+      price_unit?: string;
+      available?: boolean;
+      sort_order?: string;
+    };
     const {
       name,
       slug,
@@ -61,37 +72,24 @@ export async function POST(request: NextRequest) {
     }
 
     const dbService = createDbService(context.env.DB);
-    const now = Math.floor(Date.now() / 1000);
-
-    const result = await dbService.db.prepare(`
-      INSERT INTO products (
-        name, slug, description, short_description, featured_image_id,
-        category, sizes, base_price, price_unit, available, sort_order,
-        created_at, updated_at, created_by
-      )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `)
-      .bind(
-        name,
-        slug,
-        description,
-        short_description || null,
-        featured_image_id || null,
-        category,
-        JSON.stringify(sizes || []),
-        parseFloat(base_price),
-        price_unit,
-        available ? 1 : 0,
-        parseInt(sort_order) || 0,
-        now,
-        now,
-        1 // TODO: Use actual user ID from session
-      )
-      .run();
+    
+    const productId = await dbService.createProduct({
+      name,
+      slug,
+      description,
+      short_description,
+      featured_image_id,
+      category,
+      sizes: JSON.stringify(sizes || []),
+      base_price: parseFloat(base_price as string),
+      price_unit,
+      available: available || false,
+      sort_order: parseInt(sort_order as string) || 0
+    });
 
     return NextResponse.json({ 
       success: true, 
-      id: result.meta.last_row_id 
+      id: productId 
     });
   } catch (error) {
     console.error('Error creating product:', error);

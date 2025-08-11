@@ -57,7 +57,14 @@ export default async function HomePage() {
   ];
 
   // Get portfolio projects - try database first, fallback to static data
-  let portfolioProjects = [];
+  let portfolioProjects: Array<{
+    id: number;
+    title: string;
+    slug: string;
+    description: string;
+    client_name: string;
+    featured_image: string;
+  }> = [];
   try {
     const context = getRequestContext();
     if (context?.env?.DB) {
@@ -74,7 +81,7 @@ export default async function HomePage() {
         featured_image: project.featured_image_id ? `/api/media/${project.featured_image_id}` : '/images/placeholder-project.jpg'
       }));
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback portfolio data');
   }
 
@@ -91,15 +98,27 @@ export default async function HomePage() {
   }
 
   // Get reviews - try database first, fallback to static data
-  let reviews = [];
+  let reviews: Array<{
+    id: number;
+    reviewer_name: string;
+    rating: number;
+    content: string;
+    source: string;
+  }> = [];
   try {
     const context = getRequestContext();
     if (context?.env?.DB) {
       const dbService = createDbService(context.env.DB);
       const dbReviews = await dbService.getApprovedReviews(3);
-      reviews = dbReviews;
+      reviews = dbReviews.map(review => ({
+        id: review.id,
+        reviewer_name: review.reviewer_name,
+        rating: review.rating || 5,
+        content: review.content,
+        source: 'google'
+      }));
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback reviews data');
   }
 
@@ -109,7 +128,14 @@ export default async function HomePage() {
   }
 
   // Get blog posts - try database first, fallback to static data
-  let blogPosts = [];
+  let blogPosts: Array<{
+    id: number;
+    title: string;
+    slug: string;
+    excerpt: string;
+    featured_image?: string;
+    published_at?: number;
+  }> = [];
   try {
     const context = getRequestContext();
     if (context?.env?.DB) {
@@ -126,7 +152,7 @@ export default async function HomePage() {
         published_at: post.published_at
       }));
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback blog posts data');
   }
 

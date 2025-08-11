@@ -99,7 +99,7 @@ export default function ContactHero() {
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">Start Your Project</h2>
               <div className="w-16 h-1 mb-4" style={{ backgroundColor: '#F3ED17' }}></div>
-              <p className="text-gray-600">Fill out the form and we'll get back to you with a free quote within 24 hours.</p>
+              <p className="text-gray-600">Fill out the form and we&apos;ll get back to you with a free quote within 24 hours.</p>
             </div>
 
             <form className="space-y-6">

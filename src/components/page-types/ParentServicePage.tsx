@@ -242,7 +242,7 @@ export default function ParentServicePage({
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                What's Included in Our Service
+                What&apos;s Included in Our Service
               </h2>
               <div className="w-16 h-1 mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
             </div>
@@ -313,7 +313,7 @@ export default function ParentServicePage({
 
                   {/* Review Content */}
                   <blockquote className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
-                    "{review.content}"
+                    &ldquo;{review.content}&rdquo;
                   </blockquote>
 
                   {/* Reviewer Info */}

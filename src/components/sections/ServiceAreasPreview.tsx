@@ -36,7 +36,7 @@ export default function ServiceAreasPreview() {
           <div className="w-16 h-1 mb-6" style={{ backgroundColor: '#F3ED17' }}></div>
           <p className="text-lg text-gray-600 max-w-3xl">
             Professional tree services and land clearing from Christchurch suburbs to rural high country stations. 
-            We're already working in your area.
+            We&apos;re already working in your area.
           </p>
         </div>
 

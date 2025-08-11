@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, MapPin, Tag } from 'lucide-react';
 import { getRequestContext } from '@cloudflare/next-on-pages';
@@ -8,13 +7,16 @@ import { fallbackProjects } from '@/data/fallback-data';
 import ContactSection from '@/components/sections/ContactSection';
 import PortfolioGallery from '@/components/ui/PortfolioGallery';
 
+export const runtime = 'edge';
+
 interface PortfolioProjectPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export default async function PortfolioProjectPage({ params }: PortfolioProjectPageProps) {
+  const { slug } = await params;
   // Get the specific project - try database first, fallback to static data
   let project = null;
   
@@ -22,7 +24,7 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
     const context = getRequestContext();
     if (context?.env?.DB) {
       const dbService = createDbService(context.env.DB);
-      const dbProject = await dbService.getProjectBySlug(params.slug);
+      const dbProject = await dbService.getProjectBySlug(slug);
       
       if (dbProject) {
         project = {
@@ -30,22 +32,22 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
           title: dbProject.title,
           slug: dbProject.slug,
           description: dbProject.description || '',
-          content: dbProject.content,
-          location: dbProject.location || '',
+          content: dbProject.description || '', // Use description as content
+          location: dbProject.client_name || '',
           featured_image: dbProject.featured_image_id ? `/api/media/${dbProject.featured_image_id}` : undefined,
           published_at: dbProject.published_at,
-          category: dbProject.category || '',
+          category: dbProject.category_id?.toString() || '',
           gallery_images: [] // Would be populated from database relations
         };
       }
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback portfolio project data');
   }
 
   // If no database project, check fallback data
   if (!project) {
-    const fallbackProject = fallbackProjects.find(p => p.slug === params.slug);
+    const fallbackProject = fallbackProjects.find(p => p.slug === slug);
     if (fallbackProject) {
       project = {
         id: fallbackProject.id,
@@ -53,10 +55,10 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
         slug: fallbackProject.slug,
         description: fallbackProject.description || '',
         content: fallbackProject.content,
-        location: fallbackProject.location || 'Canterbury',
+        location: 'Canterbury', // Use hardcoded location for fallback
         featured_image: fallbackProject.featured_image,
         published_at: fallbackProject.published_at,
-        category: fallbackProject.category || 'Tree Services',
+        category: 'Tree Services', // Use hardcoded category for fallback
         // Generate some gallery images for demo
         gallery_images: [
           `https://placehold.co/800x600/2d5016/ffffff?text=Before+${fallbackProject.id}`,
@@ -75,7 +77,7 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
   }
 
   // Format the date
-  const completedDate = new Date(project.published_at * 1000).toLocaleDateString('en-NZ', {
+  const completedDate = new Date((project.published_at || Date.now()) * 1000).toLocaleDateString('en-NZ', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'

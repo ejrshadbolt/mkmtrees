@@ -7,7 +7,14 @@ import { fallbackPosts } from '@/data/fallback-data';
 
 export default async function TipsPage() {
   // Get all blog posts - try database first, fallback to static data
-  let blogPosts = [];
+  let blogPosts: Array<{
+    id: number;
+    title: string;
+    slug: string;
+    excerpt: string;
+    featured_image?: string;
+    published_at?: number;
+  }> = [];
   try {
     const context = getRequestContext();
     if (context?.env?.DB) {
@@ -24,7 +31,7 @@ export default async function TipsPage() {
         published_at: post.published_at
       }));
     }
-  } catch (error) {
+  } catch {
     console.log('Database not available, using fallback blog posts data');
   }
 

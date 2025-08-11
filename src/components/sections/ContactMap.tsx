@@ -118,7 +118,7 @@ export default function ContactMap() {
                       24/7 Emergency Callouts
                     </p>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      Storm damage, fallen trees, blocked access - we're available around the clock 
+                      Storm damage, fallen trees, blocked access - we&apos;re available around the clock 
                       for urgent tree service emergencies across Canterbury.
                     </p>
                   </div>

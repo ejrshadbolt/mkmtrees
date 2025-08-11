@@ -149,8 +149,14 @@ export class DbService {
       .then((result: D1Result<Post>) => result.results);
   }
 
+  async getAllPublishedPosts(): Promise<Post[]> {
+    return await this.db.prepare('SELECT * FROM posts WHERE published = 1 ORDER BY published_at DESC')
+      .all<Post>()
+      .then((result: D1Result<Post>) => result.results);
+  }
+
   async getPostBySlug(slug: string): Promise<Post | null> {
-    return await this.db.prepare('SELECT * FROM posts WHERE slug = ?')
+    return await this.db.prepare('SELECT * FROM posts WHERE slug = ? AND published = 1')
       .bind(slug)
       .first<Post | null>();
   }
@@ -257,6 +263,10 @@ export class DbService {
       .first<PortfolioProject | null>();
   }
 
+  async getProjectBySlug(slug: string): Promise<PortfolioProject | null> {
+    return this.getPortfolioProjectBySlug(slug);
+  }
+
   async getPortfolioProjectById(id: number): Promise<PortfolioProject | null> {
     return await this.db.prepare('SELECT * FROM portfolio_projects WHERE id = ?')
       .bind(id)
@@ -266,6 +276,12 @@ export class DbService {
   async getRecentPortfolioProjects(limit = 3): Promise<PortfolioProject[]> {
     return await this.db.prepare('SELECT * FROM portfolio_projects WHERE published = 1 ORDER BY published_at DESC, created_at DESC LIMIT ?')
       .bind(limit)
+      .all<PortfolioProject>()
+      .then((result: D1Result<PortfolioProject>) => result.results);
+  }
+
+  async getAllPortfolioProjects(): Promise<PortfolioProject[]> {
+    return await this.db.prepare('SELECT * FROM portfolio_projects WHERE published = 1 ORDER BY published_at DESC, created_at DESC')
       .all<PortfolioProject>()
       .then((result: D1Result<PortfolioProject>) => result.results);
   }
@@ -373,6 +389,13 @@ export class DbService {
       .bind(id)
       .run();
   }
+
+  async getAllProducts(): Promise<Product[]> {
+    const result = await this.db.prepare('SELECT * FROM products ORDER BY sort_order ASC, created_at DESC')
+      .all<Product>();
+    return result.results || [];
+  }
+
 }
 
 // Helper function to create a DbService instance

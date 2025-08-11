@@ -106,8 +106,8 @@ export default function ContactSection({
             {/* Contact Form */}
             <div className="bg-gray-50 p-8 shadow-sm border-l-4 border-gray-200 hover:border-yellow-400 transition-colors duration-200">
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Let's Talk About Your Job</h3>
-                <p className="text-gray-600">Tell us what you need help with — we'll be in touch shortly.</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Let&apos;s Talk About Your Job</h3>
+                <p className="text-gray-600">Tell us what you need help with — we&apos;ll be in touch shortly.</p>
               </div>
 
               <form className="space-y-6">

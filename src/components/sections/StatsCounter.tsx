@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { TreesIcon as Tree, Truck, MapPin, Clock } from 'lucide-react';
 
 interface StatItem {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   number: number;
   suffix: string;
   label: string;
