@@ -24,7 +24,7 @@ export default function ContactSection({
             src={contactImage}
             alt="Contact MKM Trees"
             fill
-            className="object-cover"
+            className="object-cover object-bottom"
           />
         </div>
         
