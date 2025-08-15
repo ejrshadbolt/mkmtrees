@@ -243,15 +243,15 @@ export default function ParentServicePage({
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-black bg-opacity-25 group-hover:bg-opacity-15 transition-all duration-300"></div>
                 </div>
 
                 {/* Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#F3ED17] mb-2">
+                  <h3 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-[#F3ED17] mb-2" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)' }}>
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-200 transition-opacity duration-300">
+                  <p className="text-sm text-gray-200 transition-opacity duration-300" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)' }}>
                     {service.description}
                   </p>
                 </div>
