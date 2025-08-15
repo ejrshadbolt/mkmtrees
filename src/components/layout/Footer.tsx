@@ -53,7 +53,6 @@ export default function Footer() {
                     className="h-12 w-auto"
                   />
                 </Link>
-                <div className="w-16 h-1 mt-3" style={{ backgroundColor: '#F3ED17' }}></div>
               </div>
               <p className="text-gray-300 text-base leading-relaxed mb-6">
                 Professional tree services and land clearing across Canterbury. Qualified arborists with Gold SiteWise certification.
