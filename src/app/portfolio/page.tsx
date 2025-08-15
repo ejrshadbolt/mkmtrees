@@ -59,8 +59,19 @@ export default async function PortfolioPage() {
         ]}
       />
       
+      {/* Recent Projects Banner */}
+      <section className="bg-white">
+        <div className="w-full py-6 px-6 lg:px-12 bg-white">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+              Recent Projects
+            </h2>
+            <div className="w-16 h-1" style={{ backgroundColor: '#F3ED17' }}></div>
+          </div>
+        </div>
+      </section>
+      
       <PortfolioFull
-        title="Recent Projects"
         projects={portfolioProjects}
       />
       
