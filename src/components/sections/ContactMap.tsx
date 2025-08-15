@@ -8,29 +8,18 @@ export default function ContactMap() {
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
         
-        {/* Left Side - Map Placeholder */}
+        {/* Left Side - Service Area Map */}
         <div className="relative bg-gray-300">
-          {/* Map Placeholder - In real implementation, embed Google Maps */}
-          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-            <div className="text-center p-8">
-              <MapPin className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-              <p className="text-gray-600 text-lg mb-4">Interactive Map Coming Soon</p>
-              <p className="text-gray-500">Canterbury & Surrounding Areas Service Coverage</p>
-            </div>
-          </div>
-          
-          {/* Map would go here */}
-          {/* 
           <iframe 
-            src="https://www.google.com/maps/embed?..." 
+            src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }}
-            allowFullScreen=""
+            allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="MKM Trees Service Areas Map"
           />
-          */}
         </div>
         
         {/* Right Side - Contact Information */}
