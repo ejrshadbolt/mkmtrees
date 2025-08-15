@@ -153,7 +153,7 @@ export default function SecondaryNav() {
                       <Link
                         key={child.name}
                         href={child.href}
-                        className="block px-4 py-2 text-sm font-semibold text-black transition-all duration-200 whitespace-nowrap relative group focus-visible-ring focus-ring-yellow"
+                        className="block px-4 py-2 text-sm font-semibold text-black transition-all duration-200 whitespace-nowrap relative group focus-visible-ring focus-ring-yellow rounded-sm"
                       >
                         {child.name}
                         <span 

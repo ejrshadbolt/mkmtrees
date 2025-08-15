@@ -85,7 +85,7 @@ export default function ContactMethods() {
                   <div className="mt-auto">
                     <Link
                       href={method.href}
-                      className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button relative"
+                      className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button relative rounded-sm"
                       style={{ backgroundColor: '#F3ED17' }}
                     >
                       <span className="relative">

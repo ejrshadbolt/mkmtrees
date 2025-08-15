@@ -124,7 +124,7 @@ export default function GoogleReviews() {
             href="https://www.google.com/search?q=MKM+Trees+reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+            className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
             style={{ 
               backgroundColor: '#F3ED17',
               transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'

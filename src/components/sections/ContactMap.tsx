@@ -99,7 +99,7 @@ export default function ContactMap() {
                     </p>
                     <Link
                       href="/service-areas"
-                      className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group relative"
+                      className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group relative rounded-sm"
                       style={{ backgroundColor: '#F3ED17' }}
                     >
                       <span className="relative">
@@ -139,7 +139,7 @@ export default function ContactMap() {
             <div className="pt-8 border-t border-gray-200">
               <Link
                 href={`tel:${businessConfig.contact.phone}`}
-                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group text-lg relative"
+                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group text-lg relative rounded-sm"
                 style={{ backgroundColor: '#F3ED17' }}
               >
                 <Phone className="mr-2 h-5 w-5" />

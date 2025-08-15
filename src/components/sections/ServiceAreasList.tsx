@@ -46,14 +46,14 @@ export default function ServiceAreasList() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:021 040 8099"
-                className="inline-flex items-center px-8 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group"
+                className="inline-flex items-center px-8 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group rounded-sm"
                 style={{ backgroundColor: '#F3ED17' }}
               >
                 Call: 021 040 8099
               </a>
               <a
                 href="/contact"
-                className="inline-flex items-center px-8 py-3 font-semibold text-gray-700 bg-white border-2 border-gray-300 hover:border-gray-400 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                className="inline-flex items-center px-8 py-3 font-semibold text-gray-700 bg-white border-2 border-gray-300 hover:border-gray-400 transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 rounded-sm"
               >
                 Get a Quote
               </a>

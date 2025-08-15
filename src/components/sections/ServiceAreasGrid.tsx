@@ -66,7 +66,7 @@ export default function ServiceAreasGrid() {
                 <div className="flex justify-center">
                   <Link
                     href={`tel:${businessConfig.contact.phone}`}
-                    className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button"
+                    className="inline-flex items-center px-6 py-3 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group/button rounded-sm"
                     style={{ backgroundColor: '#F3ED17' }}
                   >
                     <Phone className="w-4 h-4 mr-2" />
