@@ -53,10 +53,10 @@ export default function TreeReductionsPage() {
       title="Tree Reductions in Canterbury"
       subtitle="Shaping Trees Safely Without Compromising Their Health"
       description="At MKM Trees, we provide expert tree reductions across Christchurch and rural Canterbury. Whether it's an overgrown gum, a shelterbelt blocking the sun, or a tree too close to powerlines, we reduce height and spread safely — without damaging the tree or your property. We regularly work on lifestyle blocks in Selwyn, suburban homes in Christchurch, and wind-prone sites in Banks Peninsula."
-      problemTitle="The Problem We Solve"
-      problemDescription="Topping a tree might seem like the easy fix — but it often causes more harm than good. Topped trees become unstable, encourage weak regrowth, and can quickly turn into a bigger hazard. Worse still, incorrect cutting may breach council rules or void insurance cover."
+      problemTitle="The Problem with Tree Topping"
+      problemDescription="Topping a tree might seem like the easy fix — but it often causes more harm than good. Topped trees become unstable, encourage weak regrowth, and can quickly turn into a bigger hazard. Worse still, incorrect cutting may breach council rules or void insurance cover. Poor pruning techniques can weaken trees for years and create safety risks."
       solutionTitle="Why Tree Reductions Are the Better Way"
-      solutionDescription="Tree reductions involve strategic pruning — not hacking. Our qualified arborists reshape the canopy while preserving the tree's health, structure, and stability. We know how each species responds and use the right techniques to balance clearance, safety, and long-term health. Whether we're climbing or using our elevated boom saw, we get the job done clean, safe, and to code. We're fully insured, Gold SiteWise certified, and familiar with Christchurch City Council and wider Canterbury district regulations — so your job is done right the first time, without legal headaches."
+      solutionDescription="Tree reductions involve strategic pruning — not hacking. Our qualified arborists reshape the canopy while preserving the tree's health, structure, and stability. We know how each species responds and use the right techniques to balance clearance, safety, and long-term health. Whether we're climbing or using our elevated boom saw, we get the job done clean, safe, and to code."
       heroImage="/treereduction.webp"
       heroImageAlt="Professional tree reduction work maintaining tree health and structure"
       features={features}

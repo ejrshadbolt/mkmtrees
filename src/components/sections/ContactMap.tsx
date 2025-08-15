@@ -44,9 +44,14 @@ export default function ContactMap() {
                       <p className="text-sm text-gray-500 mb-1">Phone</p>
                       <Link
                         href={`tel:${businessConfig.contact.phone}`}
-                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors"
+                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors group relative"
                       >
-                        {businessConfig.contact.phone}
+                        <span className="relative">
+                          {businessConfig.contact.phone}
+                          <span 
+                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                          />
+                        </span>
                       </Link>
                       <p className="text-sm text-gray-500 mt-1">Available 24/7 for emergencies</p>
                     </div>
@@ -60,9 +65,14 @@ export default function ContactMap() {
                       <p className="text-sm text-gray-500 mb-1">Email</p>
                       <Link
                         href={`mailto:${businessConfig.contact.email}`}
-                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors break-all"
+                        className="text-lg font-semibold text-gray-900 hover:text-gray-700 transition-colors break-all group relative"
                       >
-                        {businessConfig.contact.email}
+                        <span className="relative">
+                          {businessConfig.contact.email}
+                          <span 
+                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
+                          />
+                        </span>
                       </Link>
                       <p className="text-sm text-gray-500 mt-1">Response within 24 hours</p>
                     </div>
@@ -88,8 +98,11 @@ export default function ContactMap() {
                     </p>
                     <Link
                       href="/service-areas"
-                      className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group relative rounded-sm"
-                      style={{ backgroundColor: '#F3ED17' }}
+                      className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
+                      style={{ 
+                        backgroundColor: '#F3ED17',
+                        transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                      }}
                     >
                       <span className="relative">
                         View All Service Areas
@@ -128,8 +141,11 @@ export default function ContactMap() {
             <div className="pt-8 border-t border-gray-200">
               <Link
                 href={`tel:${businessConfig.contact.phone}`}
-                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group text-lg relative rounded-sm"
-                style={{ backgroundColor: '#F3ED17' }}
+                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group text-lg relative rounded-sm"
+                style={{ 
+                  backgroundColor: '#F3ED17',
+                  transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                }}
               >
                 <Phone className="mr-2 h-5 w-5" />
                 <span className="relative">

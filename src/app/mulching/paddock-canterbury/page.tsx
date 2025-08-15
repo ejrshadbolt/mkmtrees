@@ -53,7 +53,7 @@ export default function PaddockMulchingPage() {
       title="Paddock Mulching in Canterbury"
       subtitle="Get Overgrown Grass, Scrub & Stubble Under Control — Fast"
       description="At MKM Trees, we provide efficient paddock mulching services across Christchurch, Selwyn, and rural Canterbury. Whether you've got overgrown grass, regrowth scrub, or leftover stubble after a harvest, we use powerful gear to clear and mulch the surface clean — no burning, no bulldozing, and no soil damage. Perfect for lifestyle blocks, small farms, or leased paddocks needing a reset."
-      problemTitle="The Problem We Solve"
+      problemTitle="The Problem with Overgrown & Unmanaged Paddocks"
       problemDescription="Paddocks left unmanaged quickly become unusable. Long grass, gorse regrowth, and old stubble attract pests, increase fire risk, and make the land harder to use. Traditional mowing doesn't cut it — literally — and chemical spraying creates more clean-up long term. Trying to turn it over by hand or hiring the wrong gear can be a waste of time and money."
       solutionTitle="How MKM Makes Paddocks Productive Again"
       solutionDescription="Our team brings in specialised mulching equipment that clears vegetation and breaks it down directly into the top layer of soil. This creates a mulch layer that retains moisture, suppresses weeds, and improves paddock health — ready for stock, replanting, or future tilling. From equine grazing blocks in West Melton to large rural properties in Selwyn, we deliver clean, consistent results with minimal disturbance."

@@ -147,7 +147,10 @@ export default function ParentServicePage({
                 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 font-semibold text-black bg-transparent border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-lg rounded-sm"
+                  className="inline-flex items-center justify-center px-8 py-4 font-semibold text-gray-700 bg-white border-2 border-gray-300 hover:border-gray-400 hover:scale-105 focus-visible-ring focus-ring-gray-400 text-lg rounded-sm"
+                  style={{ 
+                    transition: 'transform 300ms ease-in-out, border-color 300ms ease-in-out'
+                  }}
                 >
                   Get Written Quote
                 </Link>
@@ -156,7 +159,7 @@ export default function ParentServicePage({
           </div>
 
           {/* Right Side - Hero Image */}
-          <div className="relative overflow-hidden order-1 lg:order-2">
+          <div className="relative overflow-hidden order-1 lg:order-2 min-h-[400px] lg:min-h-0">
             <Image
               src={heroImage}
               alt={heroImageAlt}

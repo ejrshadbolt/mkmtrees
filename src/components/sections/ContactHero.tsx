@@ -85,8 +85,11 @@ export default function ContactHero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={`tel:${businessConfig.contact.phone}`}
-                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group text-lg relative rounded-sm"
-                style={{ backgroundColor: '#F3ED17' }}
+                className="inline-flex items-center px-8 py-4 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group text-lg relative rounded-sm"
+                style={{ 
+                  backgroundColor: '#F3ED17',
+                  transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                }}
               >
                 <Phone className="mr-2 h-5 w-5" />
                 <span className="relative">
@@ -100,7 +103,10 @@ export default function ContactHero() {
               
               <Link
                 href="/service-areas"
-                className="inline-flex items-center px-8 py-4 font-semibold text-gray-700 bg-transparent border-2 border-gray-300 hover:border-gray-400 hover:scale-105 transition-all duration-200 focus-visible-ring focus-ring-gray-400 text-lg rounded-sm"
+                className="inline-flex items-center justify-center px-8 py-4 font-semibold text-gray-700 bg-white border-2 border-gray-300 hover:border-gray-400 hover:scale-105 focus-visible-ring focus-ring-gray-400 text-lg rounded-sm"
+                style={{ 
+                  transition: 'transform 300ms ease-in-out, border-color 300ms ease-in-out'
+                }}
               >
                 View Service Areas
               </Link>
@@ -203,8 +209,11 @@ export default function ContactHero() {
 
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow transition-all duration-200 group relative rounded-sm"
-                style={{ backgroundColor: '#F3ED17' }}
+                className="w-full inline-flex items-center justify-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
+                style={{ 
+                  backgroundColor: '#F3ED17',
+                  transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                }}
               >
                 <span className="relative">
                   Submit Enquiry

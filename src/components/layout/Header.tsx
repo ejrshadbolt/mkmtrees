@@ -4,16 +4,75 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, ChevronRight } from 'lucide-react';
 import { navigationConfig, businessConfig } from '@/config/business';
+
+// Service categories for mobile menu
+const serviceCategories = [
+  {
+    name: 'Tree Services',
+    href: '/tree-services-canterbury',
+    children: [
+      { name: 'Qualified Arborists', href: '/tree-services/qualified-arborists-canterbury' },
+      { name: 'Stump Grinding', href: '/tree-services/stump-grinding-canterbury' },
+      { name: 'Tree Reductions', href: '/tree-services/tree-reductions-canterbury' }
+    ]
+  },
+  {
+    name: 'Tree Topping / Vegetation Management',
+    href: '/tree-topping-vegetation-management-canterbury',
+    children: [
+      { name: 'Tree Topping', href: '/tree-topping/tree-topping-canterbury' },
+      { name: 'Tall Tree Topping', href: '/tree-topping/tall-tree-topping-canterbury' }
+    ]
+  },
+  {
+    name: 'Earthworks',
+    href: '/earthworks-canterbury',
+    children: [
+      { name: 'Station Work & Rural Earthworks', href: '/earthworks/station-work-canterbury' },
+      { name: 'Land Clearing', href: '/earthworks/land-clearing-canterbury' },
+      { name: 'Heavy-Duty Tilling', href: '/earthworks/heavy-duty-tilling-canterbury' }
+    ]
+  },
+  {
+    name: 'Emergency Callouts',
+    href: '/emergency-callouts-canterbury',
+    children: [
+      { name: 'Emergency Tree Services', href: '/emergency-callouts/tree-services-canterbury' },
+      { name: 'Emergency Earthworks', href: '/emergency-callouts/earthworks-canterbury' }
+    ]
+  },
+  {
+    name: 'Mulching',
+    href: '/mulching-canterbury',
+    children: [
+      { name: 'Heavy-Duty Mulching', href: '/mulching/heavy-duty-canterbury' },
+      { name: 'Gorse & Slash Mulching', href: '/mulching/gorse-slash-canterbury' },
+      { name: 'Paddock Mulching', href: '/mulching/paddock-canterbury' }
+    ]
+  }
+];
+
+const singleServices = [
+  { name: 'Wood Chip & Fire Wood', href: '/wood-chip-firewood-canterbury' }
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedService, setExpandedService] = useState<string | null>(null);
   const pathname = usePathname();
   
   const navigation = navigationConfig.main;
 
-  const closeMobileMenu = () => setMobileMenuOpen(false);
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setExpandedService(null);
+  };
+
+  const toggleServiceExpansion = (serviceName: string) => {
+    setExpandedService(expandedService === serviceName ? null : serviceName);
+  };
 
   return (
     <header className="shadow-sm" style={{ backgroundColor: '#050608' }} role="banner">
@@ -89,7 +148,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md relative group"
+                  className="text-white px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md relative group text-center"
                   style={{ 
                     color: pathname === item.href ? '#F3ED17' : '#FFFFFF'
                   } as React.CSSProperties}
@@ -110,7 +169,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center ml-6">
               <Link
                 href={`tel:${businessConfig.contact.phone.replace(/\s/g, '')}`}
-                className="flex items-center space-x-2 text-white font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md px-3 py-2 relative group hover-yellow"
+                className="flex items-center space-x-2 text-white font-medium transition-all duration-200 focus-visible-ring focus-ring-dark rounded-md px-3 py-2 relative group hover-yellow text-center"
               >
                 <Phone 
                   className="h-4 w-4 fill-current transition-colors duration-200" 
@@ -129,48 +188,200 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-800" style={{ backgroundColor: '#050608' }} id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
+        <>
+          {/* Backdrop */}
+          <div 
+            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          />
+          
+          {/* Slide-out Menu */}
+          <div 
+            className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-sm z-50 transform transition-transform duration-300 ease-in-out"
+            style={{ backgroundColor: '#050608' }}
+            id="mobile-menu"
+          >
+            {/* Menu Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-700">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#F3ED17' }}>
+                  <Menu className="w-4 h-4 text-black" />
+                </div>
+                <span className="text-white font-semibold text-lg">Menu</span>
+              </div>
+              <button
                 onClick={closeMobileMenu}
-                className="block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 focus-visible-ring focus-ring-dark relative group"
-                style={{ 
-                  color: pathname === item.href ? '#F3ED17' : '#FFFFFF'
-                } as React.CSSProperties}
-                aria-current={pathname === item.href ? 'page' : undefined}
+                className="p-2 rounded-full text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200"
+                aria-label="Close menu"
               >
-                {item.name}
-                <span 
-                  className={`absolute bottom-1 left-3 right-3 h-0.5 transform transition-transform duration-200 origin-left ${
-                    pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                  }`}
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Scrollable Content */}
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-6 space-y-6">
+                
+                {/* Main Navigation */}
+                <nav className="space-y-2">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={closeMobileMenu}
+                      className="flex items-center justify-between p-4 rounded-xl text-white font-medium transition-all duration-200 hover:bg-gray-800 active:scale-95 group relative"
+                    >
+                      <span style={{ color: pathname === item.href ? '#F3ED17' : '#FFFFFF' }}>
+                        {item.name}
+                        <span 
+                          className={`absolute -bottom-1 left-0 right-0 h-0.5 transform transition-transform duration-300 origin-left ${
+                            pathname === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                          }`}
+                          style={{ backgroundColor: '#F3ED17' }}
+                        />
+                      </span>
+                      <ChevronRight className="w-5 h-5 text-gray-400" />
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* Services Section */}
+                <div>
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#F3ED17' }}>
+                      <div className="w-2 h-2 rounded-full bg-black" />
+                    </div>
+                    <h3 className="text-white font-semibold text-lg">Our Services</h3>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    {serviceCategories.map((category) => {
+                      const isActive = pathname === category.href || category.children.some(child => pathname === child.href);
+                      const isExpanded = expandedService === category.name;
+                      
+                      return (
+                        <div key={category.name} className="space-y-1">
+                          <div className="flex items-center">
+                            <Link
+                              href={category.href}
+                              onClick={closeMobileMenu}
+                              className="flex-1 flex items-center justify-between p-3 rounded-lg text-white font-medium transition-all duration-200 hover:bg-gray-800 active:scale-95 group relative"
+                            >
+                              <span 
+                                className="text-sm relative"
+                                style={{ color: isActive ? '#F3ED17' : '#FFFFFF' }}
+                              >
+                                {category.name}
+                                <span 
+                                  className={`absolute -bottom-1 left-0 right-0 h-0.5 transform transition-transform duration-300 origin-left ${
+                                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                                  }`}
+                                  style={{ backgroundColor: '#F3ED17' }}
+                                />
+                              </span>
+                            </Link>
+                            <button
+                              onClick={() => toggleServiceExpansion(category.name)}
+                              className="p-3 ml-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-all duration-200 active:scale-95"
+                              aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${category.name} services`}
+                            >
+                              <ChevronDown 
+                                className={`w-4 h-4 transition-transform duration-200 ${
+                                  isExpanded ? 'rotate-180' : ''
+                                }`} 
+                              />
+                            </button>
+                          </div>
+                          
+                          {/* Animated Children */}
+                          <div 
+                            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                              isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                            }`}
+                          >
+                            <div className="ml-6 space-y-1 pt-1">
+                              {category.children.map((child) => {
+                                const isChildActive = pathname === child.href;
+                                return (
+                                  <Link
+                                    key={child.name}
+                                    href={child.href}
+                                    onClick={closeMobileMenu}
+                                    className="flex items-center justify-between p-3 rounded-lg text-sm font-medium transition-all duration-200 hover:bg-gray-800 active:scale-95 group relative"
+                                    style={{ 
+                                      color: isChildActive ? '#F3ED17' : '#CCCCCC'
+                                    }}
+                                  >
+                                    <span className="relative">
+                                      {child.name}
+                                      <span 
+                                        className={`absolute -bottom-1 left-0 right-0 h-0.5 transform transition-transform duration-300 origin-left ${
+                                          isChildActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                                        }`}
+                                        style={{ backgroundColor: '#F3ED17' }}
+                                      />
+                                    </span>
+                                    <ChevronRight className="w-4 h-4 text-gray-500" />
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    {/* Single Services */}
+                    {singleServices.map((service) => {
+                      const isActive = pathname === service.href;
+                      return (
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          onClick={closeMobileMenu}
+                          className="flex items-center justify-between p-3 rounded-lg text-white font-medium transition-all duration-200 hover:bg-gray-800 active:scale-95 group relative"
+                        >
+                          <span 
+                            className="text-sm relative"
+                            style={{ color: isActive ? '#F3ED17' : '#FFFFFF' }}
+                          >
+                            {service.name}
+                            <span 
+                              className={`absolute -bottom-1 left-0 right-0 h-0.5 transform transition-transform duration-300 origin-left ${
+                                isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                              }`}
+                              style={{ backgroundColor: '#F3ED17' }}
+                            />
+                          </span>
+                          <ChevronRight className="w-4 h-4 text-gray-400" />
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Sticky Contact Section */}
+              <div className="sticky bottom-0 p-6 border-t border-gray-700" style={{ backgroundColor: '#050608' }}>
+                <Link
+                  href={`tel:${businessConfig.contact.phone.replace(/\s/g, '')}`}
+                  onClick={closeMobileMenu}
+                  className="flex items-center justify-center space-x-3 w-full p-4 rounded-xl font-semibold text-black transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg"
                   style={{ backgroundColor: '#F3ED17' }}
-                />
-              </Link>
-            ))}
-            
-            {/* Mobile Contact */}
-            <div className="border-t border-gray-800 mt-4 pt-4">
-              <Link
-                href={`tel:${businessConfig.contact.phone.replace(/\s/g, '')}`}
-                onClick={closeMobileMenu}
-                className="flex items-center space-x-2 font-medium px-3 py-2 rounded-md transition-all duration-200 text-white focus-visible-ring focus-ring-dark relative group hover-yellow"
-              >
-                <Phone className="h-4 w-4 fill-current transition-colors duration-200" style={{ color: 'inherit' }} />
-                <span className="transition-colors duration-200">{businessConfig.contact.phone}</span>
-                <span 
-                  className="absolute bottom-1 left-3 right-3 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"
-                  style={{ backgroundColor: '#F3ED17' }}
-                />
-              </Link>
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>Call {businessConfig.contact.phone}</span>
+                </Link>
+                <p className="text-center text-gray-400 text-xs mt-3">
+                  24/7 Emergency Service Available
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

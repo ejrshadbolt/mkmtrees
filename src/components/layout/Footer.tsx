@@ -98,12 +98,22 @@ export default function Footer() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                      className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                      style={{ 
+                        transform: 'translateX(0)',
+                        transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateX(4px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
                     >
                       <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                       <span className="relative">
                         {item.name}
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                        <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                       </span>
                     </Link>
                   </li>
@@ -118,47 +128,112 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/tree-topping-vegetation-management-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
+                  <Link 
+                    href="/tree-topping-vegetation-management-canterbury" 
+                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Tree Topping / Vegetation Management
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tree-services-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
+                  <Link 
+                    href="/tree-services-canterbury" 
+                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Tree Services
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/earthworks-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
+                  <Link 
+                    href="/earthworks-canterbury" 
+                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Earthworks
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/emergency-callouts-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
+                  <Link 
+                    href="/emergency-callouts-canterbury" 
+                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Emergency Callouts
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/mulching-canterbury" className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group hover:translate-x-1 relative inline-block focus-visible-ring focus-ring-dark rounded-md">
+                  <Link 
+                    href="/mulching-canterbury" 
+                    className="text-gray-300 hover:text-white transition-all duration-300 flex items-center group relative inline-block focus-visible-ring focus-ring-dark rounded-md"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(4px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
                     <span className="w-2 h-2 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200" style={{ backgroundColor: '#F3ED17' }}></span>
                     <span className="relative">
                       Mulching
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
                     </span>
                   </Link>
                 </li>
@@ -177,9 +252,22 @@ export default function Footer() {
                     <p className="text-sm text-gray-400 mb-1">Phone</p>
                     <Link
                       href={`tel:${businessConfig.contact.phone}`}
-                      className="text-white hover:text-gray-300 transition-colors font-semibold focus-visible-ring focus-ring-dark rounded-md"
+                      className="text-white hover:text-gray-300 transition-all duration-300 font-semibold focus-visible-ring focus-ring-dark rounded-md group relative inline-block"
+                      style={{ 
+                        transform: 'translateX(0)',
+                        transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateX(4px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
                     >
-                      {businessConfig.contact.phone}
+                      <span className="relative">
+                        {businessConfig.contact.phone}
+                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -190,9 +278,22 @@ export default function Footer() {
                     <p className="text-sm text-gray-400 mb-1">Email</p>
                     <Link
                       href={`mailto:${businessConfig.contact.email}`}
-                      className="text-white hover:text-gray-300 transition-colors font-semibold break-all focus-visible-ring focus-ring-dark rounded-md"
+                      className="text-white hover:text-gray-300 transition-all duration-300 font-semibold break-all focus-visible-ring focus-ring-dark rounded-md group relative inline-block"
+                      style={{ 
+                        transform: 'translateX(0)',
+                        transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = 'translateX(4px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
                     >
-                      {businessConfig.contact.email}
+                      <span className="relative">
+                        {businessConfig.contact.email}
+                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -213,9 +314,35 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="mt-12 pt-8 border-t border-gray-700">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">
-                &copy; {currentYear} {businessConfig.name}. All rights reserved.
-              </p>
+              <div className="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+                <p className="text-gray-400 mb-2 md:mb-0 md:mr-4">
+                  &copy; {currentYear} {businessConfig.name}. All rights reserved.
+                </p>
+                <p className="text-gray-500 text-sm">
+                  Designed and built by{' '}
+                  <a 
+                    href="https://vanderstudio.co.nz" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-all duration-300 group relative inline-block"
+                    style={{ 
+                      transform: 'translateX(0)',
+                      transition: 'transform 300ms ease-in-out, color 300ms ease-in-out'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'translateX(2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'translateX(0)';
+                    }}
+                  >
+                    <span className="relative">
+                      Vander Studio
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" style={{ backgroundColor: '#F3ED17' }} />
+                    </span>
+                  </a>
+                </p>
+              </div>
               <div className="flex items-center space-x-6 text-sm text-gray-400">
                 <span>Gold SiteWise Certified</span>
                 <span>•</span>

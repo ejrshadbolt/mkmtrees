@@ -105,7 +105,7 @@ export default function SecondaryNav() {
 
   return (
     <nav 
-      className="w-full border-b-2 border-black"
+      className="w-full border-b-2 border-black hidden lg:block"
       style={{ backgroundColor: '#F3ED17' }}
       role="navigation"
       aria-label="Services navigation"
@@ -122,7 +122,7 @@ export default function SecondaryNav() {
             >
               <Link
                 href={category.href}
-                className="flex items-center space-x-1 text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group"
+                className="flex items-center space-x-1 text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group text-center"
               >
                 <span>{category.name}</span>
                 <ChevronDown className="h-3 w-3" />
@@ -174,7 +174,7 @@ export default function SecondaryNav() {
             <Link
               key={service.name}
               href={service.href}
-              className="text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group"
+              className="text-black font-semibold text-sm transition-all duration-200 focus-visible-ring focus-ring-yellow px-2 py-0.5 rounded relative group text-center"
             >
               {service.name}
               <span 

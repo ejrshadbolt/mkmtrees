@@ -5,6 +5,7 @@
 /* Overscroll background styling */
 html {
   background-color: #050608;
+  scroll-behavior: smooth;
 }
 
 body {

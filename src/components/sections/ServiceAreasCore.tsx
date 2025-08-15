@@ -147,7 +147,7 @@ export default function ServiceAreasCore() {
                           <p>{area.distance}</p>
                           <p className="font-medium text-black relative inline-block">
                             {area.responseTime}
-                            <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: '#F3ED17' }}></span>
+                            <span className="absolute bottom-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" style={{ backgroundColor: '#F3ED17' }}></span>
                           </p>
                         </div>
                       </div>
@@ -164,9 +164,12 @@ export default function ServiceAreasCore() {
                   </p>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center font-semibold hover:underline"
+                    className="inline-flex items-center font-semibold group relative"
                   >
-                    Contact us about your area →
+                    <span className="relative">
+                      Contact us about your area →
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                    </span>
                   </Link>
                 </div>
               </div>

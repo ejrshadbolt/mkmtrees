@@ -15,8 +15,18 @@ export default function About({ title, content, image, imageAlt, showReadMore = 
     <section className="bg-white">
       {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-        {/* Content Column - Left */}
-        <div className="bg-white flex items-center p-8 lg:p-16">
+        {/* Image Column - First on mobile, Right on desktop */}
+        <div className="relative overflow-hidden bg-gray-200 order-1 lg:order-2 min-h-[400px] lg:min-h-0">
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Content Column - Second on mobile, Left on desktop */}
+        <div className="bg-white flex items-center p-8 lg:p-16 order-2 lg:order-1">
           <div className="w-full space-y-6">
             {title && (
               <div className="mb-8">
@@ -53,16 +63,6 @@ export default function About({ title, content, image, imageAlt, showReadMore = 
               </div>
             )}
           </div>
-        </div>
-        
-        {/* Image Column - Right */}
-        <div className="relative overflow-hidden bg-gray-200">
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            className="object-cover"
-          />
         </div>
       </div>
     </section>

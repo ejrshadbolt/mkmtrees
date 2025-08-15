@@ -19,7 +19,7 @@ export default function ContactSection({
       {/* Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
         {/* Left Side - Image */}
-        <div className="relative overflow-hidden bg-gray-200">
+        <div className="relative overflow-hidden bg-gray-200 order-1 lg:order-1 min-h-[400px] lg:min-h-0">
           <Image
             src={contactImage}
             alt="Contact MKM Trees"
@@ -29,7 +29,7 @@ export default function ContactSection({
         </div>
         
         {/* Right Side - Contact Information and Form */}
-        <div className="bg-white flex items-center p-8 lg:p-16">
+        <div className="bg-white flex items-center p-8 lg:p-16 order-2 lg:order-2">
           <div className="w-full space-y-8">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">

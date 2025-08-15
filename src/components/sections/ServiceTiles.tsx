@@ -36,7 +36,7 @@ export default function ServiceTiles({ title, subtitle, services }: ServiceTiles
       
       {/* Tiles Container - 80% width */}
       <div className="w-4/5 mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Link
               key={index}

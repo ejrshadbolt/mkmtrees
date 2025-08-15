@@ -53,10 +53,10 @@ export default function StationWorkPage() {
       title="Station Work & Rural Earthworks in Canterbury"
       subtitle="Heavy-Duty Land Services for High Country & Remote Stations"
       description="MKM Trees is trusted across Canterbury for professional station work — from clearing scrub-choked gullies to cutting in access tracks, yards, and service routes on hard-to-reach blocks. Our gear is built for tough terrain, and our operators know how to move safely and efficiently through farmland, hillsides, and remote stations. Whether you're maintaining a working property or opening up new ground, we bring the tools, timing, and experience to get it done right."
-      problemTitle="The Problem We Solve"
+      problemTitle="The Problem with Station Access"
       problemDescription="On Canterbury stations, access is everything — but it doesn't take much for land to get overgrown, boggy, or blocked. Without regular clearing or track maintenance, paddocks become unreachable, stock flow suffers, and vehicles can't get in or out. Most contractors aren't equipped for the realities of rural stations. General machinery gets stuck or breaks down, and the job often takes longer than it should."
       solutionTitle="Why MKM is Built for Station Work"
-      solutionDescription="We're not just landscapers with a digger. MKM crews are experienced in station and hill country jobs where steep land, deep ruts, and scrub-covered terrain are the norm. We use heavy-duty, custom-built machinery to clear, cut, shift and prep your land with speed and care. Whether it's restoring wind-damaged access tracks, widening fencelines, or prepping yards for development, we get in, get it sorted, and leave the site tidy — all while respecting your time, stock, and land."
+      solutionDescription="We're not just landscapers with a digger. MKM crews are experienced in station and hill country jobs where steep land, deep ruts, and scrub-covered terrain are the norm. We use heavy-duty, custom-built machinery to clear, cut, shift and prep your land with speed and care. Whether it's restoring wind-damaged access tracks, widening fencelines, or prepping yards for development, we get in, get it sorted, and leave the site tidy."
       heroImage="/stationwork.webp"
       heroImageAlt="Heavy-duty earthworks machinery working on Canterbury station property"
       features={features}

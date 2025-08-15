@@ -44,7 +44,7 @@ export default function PortfolioPreview() {
             {/* Image Column */}
             <Link 
               href={`/portfolio/${project.slug}`}
-              className={`${isEven ? 'order-1' : 'order-2'} relative overflow-hidden bg-gray-200 cursor-pointer focus-visible-ring focus-ring-yellow`}
+              className={`${isEven ? 'lg:order-1' : 'lg:order-2'} order-1 relative overflow-hidden bg-gray-200 cursor-pointer focus-visible-ring focus-ring-yellow min-h-[400px] lg:min-h-0`}
             >
               <Image
                 src={project.featured_image}
@@ -55,7 +55,7 @@ export default function PortfolioPreview() {
             </Link>
             
             {/* Content Column */}
-            <div className={`${isEven ? 'order-2' : 'order-1'} bg-white flex items-center p-8 lg:p-16`}>
+            <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'} order-2 bg-white flex items-center p-8 lg:p-16`}>
               <div className="w-full space-y-6">
                 <div className="text-sm font-semibold text-gray-600 uppercase tracking-wide">
                   {project.client_name}

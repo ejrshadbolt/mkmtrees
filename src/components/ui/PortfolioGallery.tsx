@@ -48,7 +48,7 @@ export default function PortfolioGallery({ images, titles, projectTitle }: Portf
         <div className="relative">
           <button
             onClick={() => openLightbox(0)}
-            className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:ring-offset-2"
+            className="relative w-full aspect-[16/9] rounded-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:ring-offset-2"
           >
             <Image
               src={images[0]}
@@ -79,7 +79,7 @@ export default function PortfolioGallery({ images, titles, projectTitle }: Portf
                 <button
                   key={index + 1}
                   onClick={() => openLightbox(index + 1)}
-                  className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+                  className="relative aspect-square rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
                 >
                   <Image
                     src={image}
@@ -94,7 +94,7 @@ export default function PortfolioGallery({ images, titles, projectTitle }: Portf
               {images.length > 7 && (
                 <button
                   onClick={() => openLightbox(7)}
-                  className="relative aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group bg-gray-900 text-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+                  className="relative aspect-square rounded-sm overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 group bg-gray-900 text-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
                 >
                   <div className="text-center">
                     <span className="text-xl font-bold">+{images.length - 7}</span>
