@@ -36,7 +36,7 @@ export default function About({ title, content, image, imageAlt, showReadMore = 
               <div className="pt-6">
                 <Link
                   href="/about"
-                  className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+                  className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
                   style={{ 
                     backgroundColor: '#F3ED17',
                     transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'

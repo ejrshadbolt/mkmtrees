@@ -58,7 +58,7 @@ export default function SimpleHero({
                 <Link
                   key={index}
                   href={button.href}
-                  className="px-5 py-2 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow whitespace-nowrap group relative"
+                  className="px-5 py-2 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow whitespace-nowrap group relative rounded-sm"
                   style={{ 
                     backgroundColor: '#F3ED17',
                     transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'

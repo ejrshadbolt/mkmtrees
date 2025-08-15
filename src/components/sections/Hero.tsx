@@ -57,7 +57,7 @@ export default function Hero({
               <Link
                 key={index}
                 href={button.href}
-                className="px-5 py-2 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow whitespace-nowrap relative group"
+                className="px-5 py-2 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow whitespace-nowrap relative group rounded-sm"
                 style={{ 
                   backgroundColor: '#F3ED17',
                   transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'

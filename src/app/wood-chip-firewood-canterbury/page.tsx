@@ -75,7 +75,7 @@ export default async function WoodChipFirewoodPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="#products"
-                  className="inline-flex items-center px-8 py-4 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group text-lg"
+                  className="inline-flex items-center px-8 py-4 font-semibold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 group text-lg rounded-sm"
                   style={{ backgroundColor: '#F3ED17' }}
                 >
                   <DollarSign className="mr-2 h-5 w-5" />
@@ -84,7 +84,7 @@ export default async function WoodChipFirewoodPage() {
                 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 font-semibold text-black bg-transparent border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-lg"
+                  className="inline-flex items-center px-8 py-4 font-semibold text-black bg-transparent border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-lg rounded-sm"
                 >
                   Get Custom Quote
                 </Link>

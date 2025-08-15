@@ -69,7 +69,7 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
                 <div className="pt-4">
                   <Link
                     href={`/portfolio/${project.slug}`}
-                    className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+                    className="inline-flex items-center px-6 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
                     style={{ 
                       backgroundColor: '#F3ED17',
                       transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
@@ -106,7 +106,7 @@ export default function Portfolio({ title, projects }: PortfolioProps) {
       <div className="text-center py-12 px-6 lg:px-12 bg-white">
         <Link
           href="/portfolio"
-          className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative"
+          className="inline-flex items-center px-8 py-3 font-semibold text-black hover:scale-105 hover:shadow-lg focus-visible-ring focus-ring-yellow group relative rounded-sm"
           style={{ 
             backgroundColor: '#F3ED17',
             transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
