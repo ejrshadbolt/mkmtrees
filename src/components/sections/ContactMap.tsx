@@ -11,10 +11,10 @@ export default function ContactMap() {
         {/* Left Side - Service Area Map */}
         <div className="relative bg-gray-300">
           <iframe 
-            src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8" 
+            src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8&ehbc=2E312F" 
             width="100%" 
             height="100%" 
-            style={{ border: 0 }}
+            style={{ border: 0, marginTop: '-60px', height: 'calc(100% + 60px)' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

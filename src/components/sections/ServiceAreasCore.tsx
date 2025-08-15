@@ -118,10 +118,10 @@ export default function ServiceAreasCore() {
                 {/* Service Area Map */}
                 <div className="mb-8 aspect-[2/1] border-4 border-gray-200 hover:border-yellow-400 transition-colors duration-200 overflow-hidden">
                   <iframe 
-                    src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8" 
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8&ehbc=2E312F" 
                     width="100%" 
                     height="100%" 
-                    style={{ border: 0 }}
+                    style={{ border: 0, marginTop: '-60px', height: 'calc(100% + 60px)' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
