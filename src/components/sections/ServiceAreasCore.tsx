@@ -115,13 +115,18 @@ export default function ServiceAreasCore() {
               <div className="bg-white p-8 shadow-sm">
                 <h3 className="text-2xl font-bold mb-6 text-gray-900">We Service All Canterbury</h3>
                 
-                {/* Map Placeholder */}
-                <div className="bg-gray-50 mb-8 aspect-[2/1] flex items-center justify-center border-4 border-gray-200 hover:border-yellow-400 transition-colors duration-200">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 mx-auto mb-4" style={{ color: '#F3ED17' }} />
-                    <p className="text-gray-900 font-semibold">Canterbury Service Coverage Map</p>
-                    <p className="text-sm text-gray-600 mt-2">Professional tree services across all Canterbury districts</p>
-                  </div>
+                {/* Service Area Map */}
+                <div className="mb-8 aspect-[2/1] border-4 border-gray-200 hover:border-yellow-400 transition-colors duration-200 overflow-hidden">
+                  <iframe 
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="MKM Trees Service Areas Map - Canterbury Coverage"
+                  />
                 </div>
 
                 {/* Service Areas Grid */}
