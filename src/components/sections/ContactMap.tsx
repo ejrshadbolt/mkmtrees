@@ -9,12 +9,12 @@ export default function ContactMap() {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
         
         {/* Left Side - Service Area Map */}
-        <div className="relative bg-gray-300">
+        <div className="relative bg-gray-300 overflow-hidden">
           <iframe 
             src="https://www.google.com/maps/d/u/0/embed?mid=1AXHdgB0QVARvBWqs_EQ9WwiuJUNuxm8&ehbc=2E312F" 
             width="100%" 
             height="100%" 
-            style={{ border: 0, marginTop: '-60px', height: 'calc(100% + 60px)' }}
+            style={{ border: 0, marginTop: '-80px', height: 'calc(100% + 80px)' }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
