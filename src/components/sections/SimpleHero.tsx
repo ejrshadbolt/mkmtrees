@@ -30,7 +30,7 @@ export default function SimpleHero({
           src={backgroundImage}
           alt={backgroundAlt}
           fill
-          className="object-cover"
+          style={{ objectFit: 'cover', objectPosition: '50% 60%' }}
           priority
         />
       </div>
