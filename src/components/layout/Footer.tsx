@@ -48,9 +48,9 @@ export default function Footer() {
                   <Image
                     src="/logo.png"
                     alt={businessConfig.name}
-                    width={200}
-                    height={60}
-                    className="h-12 w-auto"
+                    width={300}
+                    height={90}
+                    className="h-20 w-auto"
                   />
                 </Link>
               </div>
