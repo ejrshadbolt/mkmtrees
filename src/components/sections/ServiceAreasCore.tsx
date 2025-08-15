@@ -139,7 +139,10 @@ export default function ServiceAreasCore() {
                         <h5 className="font-bold text-gray-900 mb-2 group-hover:text-gray-700">{area.name}</h5>
                         <div className="text-sm text-gray-600 space-y-1">
                           <p>{area.distance}</p>
-                          <p style={{ color: '#F3ED17' }} className="font-semibold">{area.responseTime}</p>
+                          <p className="font-semibold text-black relative inline-block">
+                            {area.responseTime}
+                            <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: '#F3ED17' }}></span>
+                          </p>
                         </div>
                       </div>
                     ))}
