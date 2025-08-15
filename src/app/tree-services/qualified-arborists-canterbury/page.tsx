@@ -54,9 +54,9 @@ export default function QualifiedArboristsPage() {
       subtitle="Certified Tree Experts You Can Rely On"
       description="At MKM Trees, we bring qualified, insured arborists to jobs across Christchurch and rural Canterbury. Whether you need a one-off removal or help managing a large property, we get the job done safely and properly — with the right training, gear, and respect for your land."
       problemTitle="The Problem We Solve"
-      problemDescription="When tree work's done wrong, it shows — broken branches, sick trees, damaged property, or worse. DIY or cheap operators often leave trees unsafe or non-compliant with local council rules. One mistake can cost thousands — or risk someone's safety."
+      problemDescription="When tree work's done wrong, it shows — broken branches, sick trees, damaged property, or worse. DIY or cheap operators often leave trees unsafe or non-compliant with local council rules. Poor pruning techniques can weaken trees for years, and improper removals can damage surrounding plants or structures. One mistake can cost thousands in repairs — or risk someone's safety."
       solutionTitle="Why Qualified Arborists Matter"
-      solutionDescription="Our arborists understand how to assess tree health, avoid long-term damage, and follow local regulations. We're SiteWise Gold Certified and trained to handle everything from tricky removals near powerlines to careful reductions on lifestyle blocks. If you want expert care, done safely and cleanly, MKM's your crew."
+      solutionDescription="Our arborists understand how to assess tree health, avoid long-term damage, and follow local regulations. We're SiteWise Gold Certified and trained to handle everything from tricky removals near powerlines to careful reductions on lifestyle blocks. Every cut is made with proper technique, and we know Canterbury's council requirements inside and out. If you want expert care, done safely and cleanly, MKM's your crew."
       heroImage="/treeservices.webp"
       heroImageAlt="Qualified arborist safely working on tree removal with professional equipment"
       features={features}

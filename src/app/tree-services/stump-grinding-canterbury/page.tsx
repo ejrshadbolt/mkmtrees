@@ -54,9 +54,9 @@ export default function StumpGrindingPage() {
       subtitle="Tidy, Fast Tree Stump Removal Across Christchurch & Rural Blocks"
       description="Need a stump gone? MKM Trees offers reliable stump grinding across Canterbury — from backyards in Christchurch to paddocks in Selwyn. We use powerful grinders to remove stumps properly, so your land is left clean, safe, and ready to use."
       problemTitle="The Problem We Solve"
-      problemDescription="Cutting a tree is only half the job. A stump left behind can be a hazard, attract pests, and even grow back. DIY solutions like burning or digging rarely work — and often make the problem worse. If it's in the way, it needs to be ground out properly."
+      problemDescription="Cutting a tree is only half the job. A stump left behind can be a hazard, attract pests, and even grow back. DIY solutions like burning or digging rarely work — and often make the problem worse. Stumps block mowing, prevent proper fencing, and create trip hazards. If it's in the way, it needs to be ground out properly."
       solutionTitle="Why Stump Grinding Matters"
-      solutionDescription="We grind stumps deep below the surface so you can replant, build, or fence with no surprises later. From small garden stumps to massive pine bases on rural land, we handle it all — fast, tidy, and done right the first time."
+      solutionDescription="We grind stumps deep below the surface so you can replant, build, or fence with no surprises later. Our equipment handles tight access areas and operates safely around utilities and structures. From small garden stumps to massive pine bases on rural land, we handle it all — fast, tidy, and done right the first time."
       heroImage="/stumpgrinding.webp"
       heroImageAlt="Professional stump grinding equipment removing tree stump completely"
       features={features}

@@ -3,26 +3,26 @@ import { MapPin, Phone } from 'lucide-react';
 import { businessConfig } from '@/config/business';
 
 const serviceAreas = [
-  { name: "Christchurch", distance: "Local", responseTime: "Same day" },
-  { name: "Selwyn District", distance: "25km", responseTime: "Same day" },
-  { name: "Ashburton", distance: "85km", responseTime: "1-2 hours" },
-  { name: "Banks Peninsula", distance: "45km", responseTime: "1-2 hours" },
-  { name: "Rolleston", distance: "25km", responseTime: "Same day" },
-  { name: "Lincoln", distance: "35km", responseTime: "1 hour" },
-  { name: "Halswell", distance: "15km", responseTime: "Same day" },
-  { name: "Riccarton", distance: "10km", responseTime: "Same day" },
-  { name: "Marshland", distance: "20km", responseTime: "Same day" },
-  { name: "Leeston", distance: "45km", responseTime: "1-2 hours" },
-  { name: "Methven", distance: "95km", responseTime: "2-3 hours" },
-  { name: "Rakaia", distance: "75km", responseTime: "1-2 hours" },
-  { name: "Lyttelton", distance: "25km", responseTime: "1 hour" },
-  { name: "Akaroa", distance: "85km", responseTime: "2-3 hours" },
-  { name: "Duvauchelle", distance: "65km", responseTime: "1-2 hours" },
-  { name: "Waimate", distance: "165km", responseTime: "On request" },
-  { name: "Geraldine", distance: "145km", responseTime: "On request" },
-  { name: "West Melton", distance: "5km", responseTime: "Same day" },
-  { name: "Sumner", distance: "25km", responseTime: "Same day" },
-  { name: "Darfield", distance: "35km", responseTime: "1 hour" },
+  { name: "West Melton", distance: "Base", responseTime: "Same day" },
+  { name: "Christchurch", distance: "20km", responseTime: "Same day" },
+  { name: "Rolleston", distance: "10km", responseTime: "Same day" },
+  { name: "Selwyn District", distance: "15km", responseTime: "Same day" },
+  { name: "Lincoln", distance: "25km", responseTime: "Same day" },
+  { name: "Halswell", distance: "25km", responseTime: "Same day" },
+  { name: "Riccarton", distance: "20km", responseTime: "Same day" },
+  { name: "Marshland", distance: "35km", responseTime: "1 hour" },
+  { name: "Sumner", distance: "30km", responseTime: "1 hour" },
+  { name: "Lyttelton", distance: "35km", responseTime: "1 hour" },
+  { name: "Darfield", distance: "25km", responseTime: "Same day" },
+  { name: "Banks Peninsula", distance: "50km", responseTime: "1-2 hours" },
+  { name: "Leeston", distance: "35km", responseTime: "1 hour" },
+  { name: "Ashburton", distance: "75km", responseTime: "1-2 hours" },
+  { name: "Rakaia", distance: "65km", responseTime: "1-2 hours" },
+  { name: "Methven", distance: "85km", responseTime: "2-3 hours" },
+  { name: "Duvauchelle", distance: "70km", responseTime: "1-2 hours" },
+  { name: "Akaroa", distance: "90km", responseTime: "2-3 hours" },
+  { name: "Geraldine", distance: "130km", responseTime: "On request" },
+  { name: "Waimate", distance: "150km", responseTime: "On request" },
   { name: "Rural Canterbury", distance: "Varies", responseTime: "Same day" },
   { name: "High Country Stations", distance: "Varies", responseTime: "On request" }
 ];
@@ -85,8 +85,11 @@ export default function ServiceAreasCore() {
                   <div className="space-y-3">
                     <Link
                       href={`tel:${businessConfig.contact.phone}`}
-                      className="w-full text-black font-semibold py-3 px-4 flex items-center justify-center hover:shadow-lg hover:scale-105 transition-all duration-200 focus-visible-ring focus-ring-yellow group relative"
-                      style={{ backgroundColor: '#F3ED17' }}
+                      className="w-full text-black font-semibold py-3 px-4 flex items-center justify-center hover:shadow-lg hover:scale-105 focus-visible-ring focus-ring-yellow group relative rounded-sm"
+                      style={{ 
+                        backgroundColor: '#F3ED17',
+                        transition: 'transform 300ms ease-in-out, box-shadow 300ms ease-in-out'
+                      }}
                     >
                       <Phone className="w-4 h-4 mr-2" />
                       <span className="relative">
@@ -99,7 +102,10 @@ export default function ServiceAreasCore() {
                     
                     <Link
                       href="/contact"
-                      className="w-full border-2 border-gray-300 text-gray-700 bg-white font-semibold py-3 px-4 text-center hover:border-gray-400 hover:scale-105 transition-all duration-200 focus-visible-ring focus-ring-gray-400 block"
+                      className="w-full border-2 border-gray-300 text-gray-700 bg-white font-semibold py-3 px-4 text-center hover:border-gray-400 hover:scale-105 focus-visible-ring focus-ring-gray-400 block rounded-sm"
+                      style={{ 
+                        transition: 'transform 300ms ease-in-out, border-color 300ms ease-in-out'
+                      }}
                     >
                       Get Quote
                     </Link>
@@ -139,7 +145,7 @@ export default function ServiceAreasCore() {
                         <h5 className="font-bold text-gray-900 mb-2 group-hover:text-gray-700">{area.name}</h5>
                         <div className="text-sm text-gray-600 space-y-1">
                           <p>{area.distance}</p>
-                          <p className="font-semibold text-black relative inline-block">
+                          <p className="font-medium text-black relative inline-block">
                             {area.responseTime}
                             <span className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: '#F3ED17' }}></span>
                           </p>
