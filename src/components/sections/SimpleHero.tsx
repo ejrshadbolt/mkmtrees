@@ -41,10 +41,10 @@ export default function SimpleHero({
         {/* Left Column - 70% (7/10) */}
         <div className="col-span-7 flex items-end pb-20">
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.6)' }}>
               {title}
             </h1>
-            <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.7)' }}>
+            <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-2xl" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
               {subtitle}
             </p>
           </div>

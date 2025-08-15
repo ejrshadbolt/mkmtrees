@@ -57,10 +57,10 @@ export default function ServiceTiles({ title, subtitle, services }: ServiceTiles
 
               {/* Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#F3ED17]">
+                <h3 className="text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#F3ED17]" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)' }}>
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-200 leading-relaxed">
+                <p className="text-sm text-gray-200 leading-relaxed" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)' }}>
                   {service.description}
                 </p>
               </div>
