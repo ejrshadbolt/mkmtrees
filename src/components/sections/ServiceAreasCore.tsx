@@ -20,16 +20,13 @@ const serviceAreas = [
   { name: "Duvauchelle", distance: "65km", responseTime: "1-2 hours" },
   { name: "Waimate", distance: "165km", responseTime: "On request" },
   { name: "Geraldine", distance: "145km", responseTime: "On request" },
-  { name: "High Country", distance: "Varies", responseTime: "On request" }
+  { name: "West Melton", distance: "5km", responseTime: "Same day" },
+  { name: "Sumner", distance: "25km", responseTime: "Same day" },
+  { name: "Darfield", distance: "35km", responseTime: "1 hour" },
+  { name: "Rural Canterbury", distance: "Varies", responseTime: "Same day" },
+  { name: "High Country Stations", distance: "Varies", responseTime: "On request" }
 ];
 
-const allServiceAreas = [
-  "Christchurch", "Halswell", "Riccarton", "Marshland", "Sumner", 
-  "Selwyn District", "Rolleston", "Lincoln", "Leeston", "Darfield",
-  "Ashburton", "Methven", "Rakaia", "Banks Peninsula", "Lyttelton",
-  "Akaroa", "Duvauchelle", "Waimate", "Geraldine", "Rural Canterbury",
-  "Canterbury High Country Stations"
-];
 
 export default function ServiceAreasCore() {
   return (
@@ -69,7 +66,8 @@ export default function ServiceAreasCore() {
                     <div>
                       <p className="font-semibold mb-2 text-gray-900">Address:</p>
                       <p className="text-sm text-gray-600">
-                        Canterbury Region<br />
+                        Weedons Ross Road<br />
+                        West Melton 7671<br />
                         New Zealand
                       </p>
                     </div>
@@ -148,19 +146,6 @@ export default function ServiceAreasCore() {
                   </div>
                 </div>
 
-                {/* All Areas List */}
-                <div className="mb-8">
-                  <h4 className="text-lg font-semibold mb-4 text-gray-900">Complete Service Area Coverage:</h4>
-                  <div className="bg-gray-50 p-6 border-l-4 border-gray-200 hover:border-yellow-400 hover:shadow-lg transition-all duration-200">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                      {allServiceAreas.map((area, index) => (
-                        <div key={index} className="text-sm text-gray-600 py-1 hover:text-gray-900 hover:font-semibold transition-all duration-200 cursor-pointer">
-                          {area}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
 
                 {/* Bottom CTA */}
                 <div className="text-black p-6 hover:shadow-lg transition-shadow duration-200" style={{ backgroundColor: '#F3ED17' }}>
