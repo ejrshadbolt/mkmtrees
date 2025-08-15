@@ -95,7 +95,7 @@ export default async function WoodChipFirewoodPage() {
           {/* Right Side - Hero Image */}
           <div className="relative overflow-hidden order-1 lg:order-2">
             <Image
-              src="https://placehold.co/1200x800/8b4513/ffffff?text=Wood+Chip+Firewood"
+              src="/woodchipandfirewood.webp"
               alt="Wood chip and firewood products for Canterbury properties"
               fill
               className="object-cover"

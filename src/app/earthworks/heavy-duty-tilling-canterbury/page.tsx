@@ -57,7 +57,7 @@ export default function HeavyDutyTillingPage() {
       problemDescription="Canterbury soil gets compacted fast — especially on lifestyle blocks that were once farmed or left fallow. Over time, roots, weeds, clay pans, and gorse slash make the top layer almost impossible to work with. Planting struggles, drainage worsens, and machinery can't break through. Standard tillers or hired equipment often aren't powerful enough to make a real difference. You end up frustrated, with half-done prep and wasted time."
       solutionTitle="How MKM Handles Tilling Properly"
       solutionDescription="Our tilling gear is designed for hard work — deep, powerful passes that break up compacted ground, uproot old vegetation, and prepare the soil for real use. Whether you're planting pasture, reworking paddocks, or fire-prepping scrubby blocks, we till in a way that sets you up to succeed long term. We understand the unique challenges of Canterbury land — from stony plains to wind-blown high country. That means we know when to till, how deep to go, and how to match the job with your next step — whether that's fencing, planting, or erosion control."
-      heroImage="https://placehold.co/1200x800/4a5568/ffffff?text=Heavy+Duty+Tilling"
+      heroImage="/heavydutytilling.webp"
       heroImageAlt="Heavy-duty tilling equipment breaking up compacted Canterbury soil"
       features={features}
       bulletPoints={bulletPoints}

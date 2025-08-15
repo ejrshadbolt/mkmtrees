@@ -8,7 +8,7 @@ const portfolioProjects = [
     slug: "urban-tree-removal",
     description: "Professional tree removal and stump grinding in central Canterbury suburban property.",
     client_name: "Christchurch Homeowner",
-    featured_image: "https://placehold.co/400x300/2d5016/ffffff?text=Tree+Removal+Project"
+    featured_image: "/treeservices.webp"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const portfolioProjects = [
     slug: "lifestyle-block-clearing",
     description: "Complete land clearing and earthworks for lifestyle block development in Selwyn district.",
     client_name: "Rural Canterbury",
-    featured_image: "https://placehold.co/400x300/4a5568/ffffff?text=Land+Clearing+Project"
+    featured_image: "/landclearing.webp"
   }
 ];
 

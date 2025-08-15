@@ -57,7 +57,7 @@ export default function HeavyDutyMulchingPage() {
       problemDescription="Sections of land left unmanaged for too long can become almost unusable. Thick regrowth, slash piles, or gnarly scrub slow down development, increase fire risk, and attract pests. Standard mowing or weed spraying won't touch it — and clearing it manually is expensive and unsafe. Heavy machines like bulldozers leave a mess, compact the soil, and often damage what you're trying to preserve. And burning off isn't always safe, permitted, or efficient."
       solutionTitle="Why MKM's Mulching System Works Best"
       solutionDescription="Our purpose-built mulchers chew through the toughest vegetation — no chainsaws, no excavators dragging roots, no burn piles. The material is shredded and mulched into the surface, suppressing weeds, protecting topsoil, and boosting ground moisture for future planting or grazing. We've used this method to prep paddocks, clean up firebreaks, and clear neglected blocks that haven't been touched in years. It's faster, cleaner, and gives you full use of your land again — without the erosion or mess."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Heavy+Duty+Mulching"
+      heroImage="/heavydutytilling.webp"
       heroImageAlt="Heavy-duty mulching equipment clearing dense overgrown vegetation"
       features={features}
       bulletPoints={bulletPoints}

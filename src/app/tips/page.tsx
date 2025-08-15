@@ -52,7 +52,7 @@ export default async function TipsPage() {
       <SimpleHero
         title="Tips & Advice"
         subtitle="Expert guidance on tree care, land maintenance, and property management from Canterbury's trusted arborists."
-        backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=Tree+Care+Tips+and+Advice"
+        backgroundImage="/tipsandadvice.webp"
         backgroundAlt="Professional tree care tips and advice from MKM Trees experts"
         buttons={[
           { text: 'Contact Us', href: '/contact', variant: 'primary' }

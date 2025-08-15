@@ -57,7 +57,7 @@ export default function StationWorkPage() {
       problemDescription="On Canterbury stations, access is everything — but it doesn't take much for land to get overgrown, boggy, or blocked. Without regular clearing or track maintenance, paddocks become unreachable, stock flow suffers, and vehicles can't get in or out. Most contractors aren't equipped for the realities of rural stations. General machinery gets stuck or breaks down, and the job often takes longer than it should."
       solutionTitle="Why MKM is Built for Station Work"
       solutionDescription="We're not just landscapers with a digger. MKM crews are experienced in station and hill country jobs where steep land, deep ruts, and scrub-covered terrain are the norm. We use heavy-duty, custom-built machinery to clear, cut, shift and prep your land with speed and care. Whether it's restoring wind-damaged access tracks, widening fencelines, or prepping yards for development, we get in, get it sorted, and leave the site tidy — all while respecting your time, stock, and land."
-      heroImage="https://placehold.co/1200x800/8b4513/ffffff?text=Station+Work"
+      heroImage="/stationwork.webp"
       heroImageAlt="Heavy-duty earthworks machinery working on Canterbury station property"
       features={features}
       bulletPoints={bulletPoints}

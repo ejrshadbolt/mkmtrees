@@ -7,14 +7,14 @@ export default function TreeToppingVegetationManagementPage() {
       title: "Tree Topping",
       description: "Safe height control for trees that have grown too tall",
       href: "/tree-topping/tree-topping-canterbury",
-      image: "https://placehold.co/800x600/2d5016/ffffff?text=Tree+Topping",
+      image: "/treetopping.webp",
       imageAlt: "Professional tree topping service using elevated boom saw"
     },
     {
       title: "Tall Tree Topping",
       description: "Specialist tree work for high, hard-to-reach jobs",
       href: "/tree-topping/tall-tree-topping-canterbury",
-      image: "https://placehold.co/800x600/228b22/ffffff?text=Tall+Tree+Topping",
+      image: "/talltreetopping.webp",
       imageAlt: "Tall tree topping with specialized equipment and safety gear"
     }
   ];
@@ -72,7 +72,7 @@ export default function TreeToppingVegetationManagementPage() {
       problemDescription="Left unchecked, tall trees and thick vegetation can become more than just a visual issue. They block sunlight, crowd buildings, grow into powerlines, and create fire hazards. Overgrowth can also reduce airflow, damage fencing, limit access, and attract pests. Topping or clearing without the right tools or training often leads to unstable regrowth, damage to the land, or worse — injury. And in Canterbury's exposed climate, poor tree work can quickly become a safety risk."
       solutionTitle="Why Professional Topping & Vegetation Control Matters"
       solutionDescription="At MKM, we do more than just 'cut it down.' Our qualified crew uses elevated boom saws, climbing gear, and land-safe techniques to reduce tree height, open up paddocks, and clear heavy growth without making a mess or harming the tree's health. Whether it's a shelterbelt that's outgrown its purpose or a pine pushing too close to a shed, we've got it covered. We tailor our approach to the job — from light topping for view clearance to serious vegetation clearing on rough access blocks. Everything is done to a high standard, with tidy finishes and respect for your property. We also understand regional rules and compliance requirements, so you won't get caught out with council issues or unsafe work."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Tree+Topping+Vegetation+Management"
+      heroImage="/treetoppingandvegetationmanagemnet.webp"
       heroImageAlt="Professional tree topping and vegetation management in Canterbury"
       subServices={subServices}
       features={features}

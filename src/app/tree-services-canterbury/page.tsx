@@ -7,21 +7,21 @@ export default function TreeServicesPage() {
       title: "Qualified Arborists",
       description: "Certified tree experts you can rely on for safe, compliant work",
       href: "/tree-services/qualified-arborists-canterbury",
-      image: "https://placehold.co/800x600/2d5016/ffffff?text=Qualified+Arborists",
+      image: "/treeservices.webp",
       imageAlt: "Qualified arborists working safely on tree removal"
     },
     {
       title: "Stump Grinding",
       description: "Complete stump removal with professional grinding equipment",
       href: "/tree-services/stump-grinding-canterbury",
-      image: "https://placehold.co/800x600/8b4513/ffffff?text=Stump+Grinding",
+      image: "/stumpgrinding.webp",
       imageAlt: "Professional stump grinding equipment in action"
     },
     {
       title: "Tree Reductions",
       description: "Safe height and canopy reduction without compromising tree health",
       href: "/tree-services/tree-reductions-canterbury",
-      image: "https://placehold.co/800x600/228b22/ffffff?text=Tree+Reductions",
+      image: "/treereduction.webp",
       imageAlt: "Tree reduction work being performed safely"
     }
   ];
@@ -79,7 +79,7 @@ export default function TreeServicesPage() {
       problemDescription="Trees that are overgrown, storm-damaged, or poorly maintained can be a real hazard. They might block sunlight, damage foundations, or become dangerous in Canterbury's high winds. Even worse, amateur tree work often makes the problem worse, leaving trees unstable or creating regrowth issues."
       solutionTitle="Why Professional Tree Care Matters"
       solutionDescription="Our qualified arborists understand local Canterbury tree species and diseases, how to prune or reduce safely without harming the tree, what gear is needed for tight-access or tall tree jobs, and NZ regulations around tree height, boundary clearance & protected zones. We help homeowners tidy up trees or open up views, lifestyle block owners with shelterbelts or old tree lines, and farmers and developers clear land for future use."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Professional+Tree+Services"
+      heroImage="/treeservices.webp"
       heroImageAlt="Professional tree services team working in Canterbury"
       subServices={subServices}
       features={features}

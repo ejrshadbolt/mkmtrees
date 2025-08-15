@@ -57,7 +57,7 @@ export default function TreeReductionsPage() {
       problemDescription="Topping a tree might seem like the easy fix — but it often causes more harm than good. Topped trees become unstable, encourage weak regrowth, and can quickly turn into a bigger hazard. Worse still, incorrect cutting may breach council rules or void insurance cover."
       solutionTitle="Why Tree Reductions Are the Better Way"
       solutionDescription="Tree reductions involve strategic pruning — not hacking. Our qualified arborists reshape the canopy while preserving the tree's health, structure, and stability. We know how each species responds and use the right techniques to balance clearance, safety, and long-term health. Whether we're climbing or using our elevated boom saw, we get the job done clean, safe, and to code. We're fully insured, Gold SiteWise certified, and familiar with Christchurch City Council and wider Canterbury district regulations — so your job is done right the first time, without legal headaches."
-      heroImage="https://placehold.co/1200x800/228b22/ffffff?text=Tree+Reductions"
+      heroImage="/treereduction.webp"
       heroImageAlt="Professional tree reduction work maintaining tree health and structure"
       features={features}
       bulletPoints={bulletPoints}

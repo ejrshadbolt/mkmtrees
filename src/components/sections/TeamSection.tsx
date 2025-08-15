@@ -11,19 +11,19 @@ const teamMembers: TeamMember[] = [
   {
     name: "Mark McDonald",
     role: "Owner & Lead Arborist",
-    image: "https://placehold.co/400x400/4a5568/ffffff?text=Mark+McDonald",
+    image: "/aboutus.webp",
     experience: "15+ Years Experience"
   },
   {
     name: "Kyle Anderson",
     role: "Senior Tree Specialist",
-    image: "https://placehold.co/400x400/4a5568/ffffff?text=Kyle+Anderson",
+    image: "/aboutus.webp",
     experience: "8+ Years Experience"
   },
   {
     name: "Mike Thompson",
     role: "Earthworks Operator",
-    image: "https://placehold.co/400x400/4a5568/ffffff?text=Mike+Thompson",
+    image: "/aboutus.webp",
     experience: "12+ Years Experience"
   }
 ];

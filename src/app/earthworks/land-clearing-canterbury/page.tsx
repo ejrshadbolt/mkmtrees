@@ -57,7 +57,7 @@ export default function LandClearingPage() {
       problemDescription="When land is left to overgrow, it doesn't take long before it becomes unusable. Gorse, broom, and wild scrub take hold. Old stumps and roots make it impossible to fence or graze. Machinery access becomes risky, and jobs like planting, building, or yard prep get delayed — or blow out in cost. DIY solutions often fall short. Small mowers and hired diggers can't keep up with root systems, tangled vegetation, or uneven terrain."
       solutionTitle="How MKM Clears Land the Right Way"
       solutionDescription="We do more than just flatten scrub. Our clearing process is built for tough Canterbury ground — from flat lifestyle sections to high-country stations. We assess your site and choose the right mix of mulching, grinding, and removal to open up land quickly while protecting the soil for what's next. Because we also offer earthworks, stump grinding, and tilling, we can finish the job properly — ready for fencing, planting, or development. And every job is done by a local team that understands rural access, weather, and the real-world needs of Canterbury properties."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Land+Clearing"
+      heroImage="/landclearing.webp"
       heroImageAlt="Professional land clearing services removing overgrown vegetation in Canterbury"
       features={features}
       bulletPoints={bulletPoints}

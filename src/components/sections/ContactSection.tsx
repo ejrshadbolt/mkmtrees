@@ -12,7 +12,7 @@ interface ContactSectionProps {
 export default function ContactSection({ 
   title = "Get In Touch", 
   subtitle = "Looking for dependable tree services in Canterbury and surrounding areas? Send us a message—we're here to help.",
-  contactImage = "https://placehold.co/800x600/2d5016/ffffff?text=Contact+MKM+Trees"
+  contactImage = "/contactuspage.webp"
 }: ContactSectionProps) {
   return (
     <section className="bg-white">

@@ -57,7 +57,7 @@ export default function EmergencyEarthworksPage() {
       problemDescription="After heavy rain or sudden damage, land can shift overnight. Tracks become bogged or blocked. Fencelines collapse. Driveways wash out. Slips pile up debris and make key areas completely inaccessible. Whether it's stormwater build-up, broken culverts, or a hillside that's let go — you need more than a shovel and good luck. Delays make it worse. Paddocks become dangerous for stock. Contractors can't access the job. And DIY efforts can end up causing more erosion or damage than they fix."
       solutionTitle="How MKM Delivers Emergency Earthmoving Right"
       solutionDescription="Our crew is ready to roll with the gear that gets it done — fast. We assess the situation, identify the safest solution, and bring in the right machinery: diggers, loaders, or heavy-duty tillers, depending on terrain. From culvert clearing to debris removal and full-scale re-grading, we stabilise the site and restore access properly. Because we're already working across Canterbury's farms and stations, we know how to operate on steep ground, soft paddocks, and high-risk zones. We're not just fast — we're smart, safe, and practical."
-      heroImage="https://placehold.co/1200x800/ea580c/ffffff?text=Emergency+Earthworks"
+      heroImage="/emergencyearthworks.webp"
       heroImageAlt="Emergency earthworks machinery responding to land slips and access issues"
       features={features}
       bulletPoints={bulletPoints}

@@ -57,7 +57,7 @@ export default function GorseSlashMulchingPage() {
       problemDescription="Gorse and slash don't just look bad — they choke native growth, damage fences, block access, and create a major fire risk during dry Canterbury summers. Slash piles left after forestry jobs quickly become overgrown and dangerous, while gorse spreads fast and is nearly impossible to remove by hand or mower. Burning can be risky and often requires permits. Digging it out damages the ground and brings new regrowth. You need a solution that clears it properly — and keeps it gone."
       solutionTitle="How MKM Clears Gorse & Slash the Right Way"
       solutionDescription="Our mechanical mulching equipment is purpose-built to grind gorse, broom, and slash into fine mulch that's left to break down naturally on-site. We reach tight and sloped areas that bigger machines can't access, while leaving a clean, workable surface that's ready for fencing, replanting, or grazing. Because we work across hill blocks, remote paddocks, and forestry edges, we know how to get in, clear it fast, and leave your land tidy and safe — all without the erosion or damage that comes with traditional clearing."
-      heroImage="https://placehold.co/1200x800/8b4513/ffffff?text=Gorse+Slash+Mulching"
+      heroImage="/gorseandslashmulching.webp"
       heroImageAlt="Specialized mulching equipment processing gorse and forestry slash"
       features={features}
       bulletPoints={bulletPoints}

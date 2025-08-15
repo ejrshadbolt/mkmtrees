@@ -57,7 +57,7 @@ export default function EmergencyTreeServicesPage() {
       problemDescription="Storms in Canterbury can knock down large trees in seconds — crushing sheds, blocking driveways, or tearing through fences. Sometimes it's not the tree that falls, but one that leans dangerously or shows cracks after high winds. These aren't jobs to wait on, and they're not safe to DIY. Untrained operators often make the damage worse. Cutting pressure-loaded limbs without the right method can send branches flying, collapse trees the wrong way, or trigger further damage to nearby structures."
       solutionTitle="How MKM Handles Tree Emergencies Properly"
       solutionDescription="Our team of qualified arborists and emergency responders have the training and tools to work fast — and safely. We assess the situation on arrival, secure the site, and remove or stabilise dangerous trees using elevated saws, winches, and heavy-duty gear. We don't just hack the tree down. We work with care to avoid further damage, preserve what's still safe, and restore access as quickly as possible. Whether it's a tree split by wind, a branch through the roof, or a pine leaning toward your driveway — we've seen it, and we know how to fix it."
-      heroImage="https://placehold.co/1200x800/dc2626/ffffff?text=Emergency+Tree+Services"
+      heroImage="/emergencytreeservices.webp"
       heroImageAlt="Emergency tree removal crew responding to storm damage in Canterbury"
       features={features}
       bulletPoints={bulletPoints}

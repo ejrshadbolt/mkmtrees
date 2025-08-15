@@ -11,7 +11,7 @@ export default function ReviewsPage() {
       <SimpleHero
         title="Why Canterbury Locals Choose MKM Trees"
         subtitle="Trusted across Canterbury for expert tree work, land services, and fast emergency callouts."
-        backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=Happy+MKM+Trees+Customers"
+        backgroundImage="/review.webp"
         backgroundAlt="Satisfied MKM Trees customers with completed tree service projects across Canterbury"
         buttons={[
           { text: 'Contact Us', href: '/contact', variant: 'primary' }

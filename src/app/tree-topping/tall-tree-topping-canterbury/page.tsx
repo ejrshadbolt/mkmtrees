@@ -57,7 +57,7 @@ export default function TallTreeToppingPage() {
       problemDescription="Tall trees are often the most dangerous. Left unmanaged, they become top-heavy, unstable in Canterbury's strong winds, and more likely to snap or fall — putting buildings, fences, and people at risk. They can also grow into power lines or block sunlight over time. Most tree crews aren't equipped for extreme height or difficult terrain. Climbing tall trees without the right training or gear is unsafe and often leads to messy, uneven results. DIY topping is even riskier, especially if the tree is already leaning, decayed, or under pressure from wind."
       solutionTitle="How MKM Handles Tall Tree Work Safely"
       solutionDescription="Our crew is trained to assess, rig, and top tall trees using industry-safe methods that reduce risk and preserve tree health. We plan the job to avoid damage to surrounding areas and finish with a tidy site — no leftover limbs, ruts, or cleanup headaches. For rural or high-country jobs, we use gear designed for rough terrain and limited access. With SiteWise Gold certification, full insurance, and years of experience across Canterbury's toughest jobs, we get tall tree work done properly — and safely — the first time."
-      heroImage="https://placehold.co/1200x800/228b22/ffffff?text=Tall+Tree+Topping"
+      heroImage="/talltreetopping.webp"
       heroImageAlt="Specialist tall tree topping work using elevated equipment in Canterbury"
       features={features}
       bulletPoints={bulletPoints}

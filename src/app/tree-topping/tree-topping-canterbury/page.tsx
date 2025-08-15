@@ -57,7 +57,7 @@ export default function TreeToppingPage() {
       problemDescription="When trees grow too tall, they quickly become a safety risk. They can block sunlight, crowd buildings, interfere with power lines, and are more likely to fall or split in Canterbury's high winds. The issue comes when people attempt topping without the right skills. DIY jobs or cheap operators often leave trees with unstable regrowth, exposed wounds, or even cause long-term health decline. In some cases, they create new hazards or fall foul of local council rules."
       solutionTitle="How MKM Trees Gets It Right"
       solutionDescription="We don't just cut trees — we assess them properly and top them in a way that balances safety with health. Our team uses an elevated 17-metre boom saw and controlled methods to reduce height cleanly, without butchering the tree or leaving a mess behind. You'll get a safer, neater result that complies with local regulations and protects your property long-term. We work efficiently across lifestyle blocks, suburban homes, and rural stations — always with care and respect for your land."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Tree+Topping"
+      heroImage="/treetopping.webp"
       heroImageAlt="Professional tree topping service with elevated boom saw in Canterbury"
       features={features}
       bulletPoints={bulletPoints}

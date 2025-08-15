@@ -57,7 +57,7 @@ export default function StumpGrindingPage() {
       problemDescription="Cutting a tree is only half the job. A stump left behind can be a hazard, attract pests, and even grow back. DIY solutions like burning or digging rarely work — and often make the problem worse. If it's in the way, it needs to be ground out properly."
       solutionTitle="Why Stump Grinding Matters"
       solutionDescription="We grind stumps deep below the surface so you can replant, build, or fence with no surprises later. From small garden stumps to massive pine bases on rural land, we handle it all — fast, tidy, and done right the first time."
-      heroImage="https://placehold.co/1200x800/8b4513/ffffff?text=Stump+Grinding"
+      heroImage="/stumpgrinding.webp"
       heroImageAlt="Professional stump grinding equipment removing tree stump completely"
       features={features}
       bulletPoints={bulletPoints}

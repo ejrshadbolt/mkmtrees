@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ServiceAreasHero() {
   return (
     <section className="py-16 bg-white">
@@ -8,10 +10,11 @@ export default function ServiceAreasHero() {
             {/* Left Column - Photo */}
             <div className="order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="https://placehold.co/600x450/2d5016/ffffff?text=Canterbury+Tree+Services+Coverage+Map"
+                <Image
+                  src="/serviceareas.webp"
                   alt="Canterbury tree services coverage showing rural properties and urban areas where MKM Trees operates"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>

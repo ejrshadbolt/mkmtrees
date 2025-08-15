@@ -57,7 +57,7 @@ export default function PaddockMulchingPage() {
       problemDescription="Paddocks left unmanaged quickly become unusable. Long grass, gorse regrowth, and old stubble attract pests, increase fire risk, and make the land harder to use. Traditional mowing doesn't cut it — literally — and chemical spraying creates more clean-up long term. Trying to turn it over by hand or hiring the wrong gear can be a waste of time and money. And leaving it too long leads to compacted soil, erosion, or poor regrowth."
       solutionTitle="How MKM Makes Paddocks Productive Again"
       solutionDescription="Our team brings in specialised mulching equipment that clears vegetation and breaks it down directly into the top layer of soil. This creates a mulch layer that retains moisture, suppresses weeds, and improves paddock health — ready for stock, replanting, or future tilling. From equine grazing blocks in West Melton to large rural properties in Selwyn, we deliver clean, consistent results with minimal disturbance. Because we work across Canterbury's diverse terrain, we know how to do the job right — safely, quickly, and with a tidy finish."
-      heroImage="https://placehold.co/1200x800/228b22/ffffff?text=Paddock+Mulching"
+      heroImage="/paddockmulching.webp"
       heroImageAlt="Professional paddock mulching services for Canterbury farms and lifestyle blocks"
       features={features}
       bulletPoints={bulletPoints}

@@ -15,42 +15,42 @@ export default async function HomePage() {
     {
       title: 'Tree Topping / Vegetation Management',
       description: 'Tall tree topping and vegetation control for rural properties and lifestyle blocks',
-      image: 'https://placehold.co/600x400/2d5016/ffffff?text=Tree+Topping',
+      image: '/treetopping.webp',
       imageAlt: 'Tree topping and vegetation management services',
       href: '/tree-topping-vegetation-management-canterbury'
     },
     {
       title: 'Tree Services',
       description: 'Qualified arborists providing stump grinding, tree reductions, and expert tree care',
-      image: 'https://placehold.co/600x400/4a5568/ffffff?text=Tree+Services',
+      image: '/treeservices.webp',
       imageAlt: 'Professional tree services and arborist work',
       href: '/tree-services-canterbury'
     },
     {
       title: 'Earthworks',
       description: 'Land clearing, station work, and heavy-duty tilling for Canterbury properties',
-      image: 'https://placehold.co/600x400/8b4513/ffffff?text=Earthworks',
+      image: '/earthworks.webp',
       imageAlt: 'Earthworks and land clearing equipment',
       href: '/earthworks-canterbury'
     },
     {
       title: 'Emergency Callouts',
       description: 'Rapid response for urgent tree and earthworks situations across Canterbury',
-      image: 'https://placehold.co/600x400/dc2626/ffffff?text=Emergency',
+      image: '/emergencycallouts.webp',
       imageAlt: 'Emergency tree services and callouts',
       href: '/emergency-callouts-canterbury'
     },
     {
       title: 'Wood Chip & Fire Wood',
       description: 'Premium wood chips, seasoned firewood, mulch, and calf bedding delivered',
-      image: 'https://placehold.co/600x400/92400e/ffffff?text=Wood+Chips',
+      image: '/woodchipandfirewood.webp',
       imageAlt: 'Wood chips and firewood products',
       href: '/wood-chip-firewood-canterbury'
     },
     {
       title: 'Mulching',
       description: 'Heavy-duty paddock mulching, gorse clearing, and slash processing services',
-      image: 'https://placehold.co/600x400/365314/ffffff?text=Mulching',
+      image: '/mulching.webp',
       imageAlt: 'Mulching services and equipment',
       href: '/mulching-canterbury'
     }
@@ -173,7 +173,7 @@ export default async function HomePage() {
       <Hero
         title="Canterbury's Tree Topping & Land Clearing Experts"
         subtitle="Serving lifestyle blocks, farms, and rural properties with precision and power"
-        backgroundImage="https://placehold.co/1920x1080/4a5568/ffffff?text=Tree+Service+Landscape"
+        backgroundImage="/homepage.webp"
         backgroundAlt="Professional tree service equipment and landscape"
         buttons={[
           { text: 'About Us', href: '/about', variant: 'primary' },
@@ -201,7 +201,7 @@ With qualified arborists and a brand-new fleet of specialised gear, we handle ev
 Our team is known for being hardworking, honest, and easy to deal with. Every job is completed to a high standard with care and respect for your property. We're proud to hold Gold SiteWise certification, backing our commitment to top-tier safety.
 
 If you're after a team with real experience, serious gear, and a reputation for quality, MKM Trees is ready when you are."
-        image="https://placehold.co/800x600/4a5568/ffffff?text=MKM+Trees+Team"
+        image="/aboutus.webp"
         imageAlt="MKM Trees team and equipment"
         showReadMore={true}
       />

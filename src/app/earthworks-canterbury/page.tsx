@@ -7,21 +7,21 @@ export default function EarthworksPage() {
       title: "Station Work & Rural Earthworks",
       description: "Heavy-duty land services for high country and remote stations",
       href: "/earthworks/station-work-canterbury",
-      image: "https://placehold.co/800x600/8b4513/ffffff?text=Station+Work",
+      image: "/stationwork.webp",
       imageAlt: "Heavy-duty earthworks machinery working on Canterbury station land"
     },
     {
       title: "Land Clearing",
       description: "Tidy, efficient clearing for paddocks, yards and overgrown sections",
       href: "/earthworks/land-clearing-canterbury",
-      image: "https://placehold.co/800x600/2d5016/ffffff?text=Land+Clearing",
+      image: "/landclearing.webp",
       imageAlt: "Professional land clearing services removing overgrown vegetation"
     },
     {
       title: "Heavy-Duty Tilling",
       description: "Break up tough ground and get your land ready for what's next",
       href: "/earthworks/heavy-duty-tilling-canterbury",
-      image: "https://placehold.co/800x600/4a5568/ffffff?text=Heavy+Tilling",
+      image: "/heavydutytilling.webp",
       imageAlt: "Heavy-duty tilling equipment preparing Canterbury farmland"
     }
   ];
@@ -79,7 +79,7 @@ export default function EarthworksPage() {
       problemDescription="Many rural or semi-rural properties around Canterbury struggle with land that's overrun, uneven, or impossible to work with. Over time, weeds, scrub, and buried stumps take over. Soil gets hard-packed. Tracks wash out or become unusable. You're left with land that's more stress than value. DIY gear usually isn't up to the task. And many general earthmoving contractors aren't used to station-style jobs where access is rough and timing matters."
       solutionTitle="Why MKM's Earthworks Approach Works Better"
       solutionDescription="We specialise in land that's rural, rugged, or high-demand. Our team regularly handles station work, land clearing, and heavy-duty tilling for properties across Selwyn, Mid-Canterbury, and the Christchurch surrounds. We know how to work efficiently on uneven ground, remote sites, and where paddock access is limited. Our operators are experienced, our gear is specialised, and we leave every site tidied and ready for what's next — whether that's re-fencing, replanting, or development."
-      heroImage="https://placehold.co/1200x800/8b4513/ffffff?text=Earthworks+Canterbury"
+      heroImage="/earthworks.webp"
       heroImageAlt="Professional earthworks services across Canterbury rural properties"
       subServices={subServices}
       features={features}

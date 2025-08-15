@@ -11,7 +11,7 @@ export default function AboutPage() {
       <SimpleHero
         title="Canterbury's Trusted Team for Tree Work & Earthmoving"
         subtitle="Locally owned, expertly equipped, and known for getting it done right."
-        backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=MKM+Trees+Team+at+Work"
+        backgroundImage="/aboutus.webp"
         backgroundAlt="MKM Trees team working on tree removal and land clearing in Canterbury"
         buttons={[
           { text: 'Contact Us', href: '/contact', variant: 'primary' }
@@ -31,7 +31,7 @@ Our close-knit team is known for being hardworking, honest, and easy to deal wit
 We're also proud to hold Gold SiteWise certification, backing our commitment to top-tier health and safety on every site.
 
 If you're after a team with real experience, serious gear, and a reputation for quality, MKM Trees is ready when you are."
-        image="https://placehold.co/800x600/4a5568/ffffff?text=MKM+Trees+Equipment"
+        image="/earthworks.webp"
         imageAlt="MKM Trees specialized equipment and machinery for tree services and earthworks"
       />
       

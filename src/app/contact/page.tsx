@@ -9,7 +9,7 @@ export default function ContactPage() {
       <SimpleHero
         title="Contact MKM Trees"
         subtitle="Get in touch with Canterbury's trusted tree service experts for professional quotes and emergency support."
-        backgroundImage="https://placehold.co/1920x1080/2d5016/ffffff?text=Contact+MKM+Trees+Canterbury"
+        backgroundImage="/contactussection.webp"
         backgroundAlt="MKM Trees team ready to help with tree services and land clearing across Canterbury"
       />
       <ContactHero />

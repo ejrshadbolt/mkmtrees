@@ -57,7 +57,7 @@ export default function QualifiedArboristsPage() {
       problemDescription="When tree work's done wrong, it shows — broken branches, sick trees, damaged property, or worse. DIY or cheap operators often leave trees unsafe or non-compliant with local council rules. One mistake can cost thousands — or risk someone's safety."
       solutionTitle="Why Qualified Arborists Matter"
       solutionDescription="Our arborists understand how to assess tree health, avoid long-term damage, and follow local regulations. We're SiteWise Gold Certified and trained to handle everything from tricky removals near powerlines to careful reductions on lifestyle blocks. If you want expert care, done safely and cleanly, MKM's your crew."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Qualified+Arborists"
+      heroImage="/treeservices.webp"
       heroImageAlt="Qualified arborist safely working on tree removal with professional equipment"
       features={features}
       bulletPoints={bulletPoints}

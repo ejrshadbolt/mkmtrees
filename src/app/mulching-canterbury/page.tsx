@@ -7,21 +7,21 @@ export default function MulchingPage() {
       title: "Heavy-Duty Mulching",
       description: "Clear dense growth fast without damaging the land",
       href: "/mulching/heavy-duty-canterbury",
-      image: "https://placehold.co/800x600/2d5016/ffffff?text=Heavy+Duty+Mulching",
+      image: "/heavydutytilling.webp",
       imageAlt: "Heavy-duty mulching equipment clearing dense vegetation in Canterbury"
     },
     {
       title: "Gorse & Slash Mulching",
       description: "Fast, clean removal of invasive scrub and forestry waste",
       href: "/mulching/gorse-slash-canterbury",
-      image: "https://placehold.co/800x600/8b4513/ffffff?text=Gorse+Slash+Mulching",
+      image: "/gorseandslashmulching.webp",
       imageAlt: "Specialized mulching of gorse and forestry slash waste"
     },
     {
       title: "Paddock Mulching",
       description: "Get overgrown grass, scrub and stubble under control fast",
       href: "/mulching/paddock-canterbury",
-      image: "https://placehold.co/800x600/228b22/ffffff?text=Paddock+Mulching",
+      image: "/paddockmulching.webp",
       imageAlt: "Professional paddock mulching services for Canterbury farms"
     }
   ];
@@ -79,7 +79,7 @@ export default function MulchingPage() {
       problemDescription="Overgrown vegetation and scrub waste time, reduce land use, and increase fire risk. Gorse, broom, and slash piles are common across Canterbury properties, but they're tough to shift without the right machinery. Left too long, they invite pests, choke regrowth, and make land harder to manage. Standard clearing methods like burning or bulldozing often leave a mess, compact the soil, or require permits. They're slow, risky, and not sustainable."
       solutionTitle="Why MKM's Mulching Approach Works Better"
       solutionDescription="Our heavy-duty mulchers grind vegetation directly into the soil surface — breaking down growth, removing root systems, and leaving a clean, walkable finish. Mulching improves soil health, boosts drainage, and gives you immediate access to reclaim land or replant without follow-up work. Because we work across lifestyle blocks, hill country farms, and forestry edges, we know how to match the right mulching method to your site. Whether it's gorse on a hillside, slash in a pine block, or kikuyu taking over a paddock, we sort it quickly and properly — without tearing up your land."
-      heroImage="https://placehold.co/1200x800/2d5016/ffffff?text=Mulching+Services"
+      heroImage="/mulching.webp"
       heroImageAlt="Professional mulching services clearing overgrown land in Canterbury"
       subServices={subServices}
       features={features}

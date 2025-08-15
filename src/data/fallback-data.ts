@@ -17,7 +17,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 86400,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/2d5016/ffffff?text=Canterbury+Qualified+Arborists",
+    featured_image: "/treeservices.webp",
     tags: ["Tree Safety", "Arborist Tips", "Canterbury"]
   },
   {
@@ -35,7 +35,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 172800,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/8b4513/ffffff?text=Canterbury+Stump+Grinding",
+    featured_image: "/stumpgrinding.webp",
     tags: ["Land Maintenance", "Tree Aftercare", "Stump Removal"]
   },
   {
@@ -53,7 +53,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 259200,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/2d5016/ffffff?text=Tree+Topping+vs+Reductions",
+    featured_image: "/treereduction.webp",
     tags: ["Tree Care", "Safety", "Seasonal Management"]
   },
   {
@@ -70,7 +70,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 345600,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/8b4513/ffffff?text=Canterbury+Land+Clearing",
+    featured_image: "/landclearing.webp",
     tags: ["Land Maintenance", "Rural Properties", "Heavy Tilling"]
   },
   {
@@ -87,7 +87,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 432000,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/228b22/ffffff?text=Gorse+Mulching+Canterbury",
+    featured_image: "/gorseandslashmulching.webp",
     tags: ["Land Maintenance", "Gorse Control", "Fire Prevention"]
   },
   {
@@ -104,7 +104,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 518400,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/4a5568/ffffff?text=Storm+Emergency+Services",
+    featured_image: "/emergencycallouts.webp",
     tags: ["Emergency Services", "Storm Preparation", "24/7 Callouts"]
   },
   {
@@ -121,7 +121,7 @@ export const fallbackPosts = [
     updated_at: Math.floor(Date.now() / 1000) - 604800,
     author_id: 1,
     featured_image_id: null,
-    featured_image: "https://placehold.co/600x400/8b4513/ffffff?text=Wood+Chips+Firewood",
+    featured_image: "/woodchipandfirewood.webp",
     tags: ["Sustainability", "Wood Chips", "Firewood", "Recycling"]
   }
 ];
@@ -136,7 +136,7 @@ export const fallbackProducts = [
                   <p><strong>Quality guarantee:</strong> All firewood is tested for moisture content and seasoned for at least 12 months before delivery.</p>`,
     short_description: "Premium dry split firewood, seasoned and ready to burn",
     featured_image_id: null,
-    featured_image: "https://placehold.co/800x600/8b4513/ffffff?text=Dry+Split+Firewood",
+    featured_image: "/woodchipandfirewood.webp",
     category: "firewood",
     sizes: JSON.stringify(["1 cubic meter", "2 cubic meters", "3 cubic meters", "5 cubic meters"]),
     base_price: 180,
@@ -156,7 +156,7 @@ export const fallbackProducts = [
                   <p><strong>Eco-friendly:</strong> Made from recycled tree waste and vegetation from our Canterbury tree services.</p>`,
     short_description: "Premium mixed age mulch for gardens and landscaping",
     featured_image_id: null,
-    featured_image: "https://placehold.co/800x600/2d5016/ffffff?text=Mixed+Age+Mulch",
+    featured_image: "/mixedagemulch.webp",
     category: "mulch",
     sizes: JSON.stringify(["1 cubic meter", "3 cubic meters", "5 cubic meters", "10 cubic meters"]),
     base_price: 45,
@@ -176,7 +176,7 @@ export const fallbackProducts = [
                   <p><strong>Farm-tested:</strong> Used by Canterbury dairy and beef farmers for superior calf comfort and health.</p>`,
     short_description: "Clean, absorbent bedding material for calves and young stock",
     featured_image_id: null,
-    featured_image: "https://placehold.co/800x600/daa520/ffffff?text=Calf+Bedding",
+    featured_image: "/mixedagemulch.webp",
     category: "bedding",
     sizes: JSON.stringify(["2 cubic meters", "5 cubic meters", "10 cubic meters", "Truck load"]),
     base_price: 35,
@@ -196,7 +196,7 @@ export const fallbackProducts = [
                   <p><strong>Fully customizable:</strong> Contact us to discuss your specific requirements and get a tailored quote.</p>`,
     short_description: "Customizable wood chip, mulch, or bedding to your specifications",
     featured_image_id: null,
-    featured_image: "https://placehold.co/800x600/4a5568/ffffff?text=Custom+Load",
+    featured_image: "/woodchipandfirewood.webp",
     category: "custom",
     sizes: JSON.stringify(["Quote required"]),
     base_price: 0,
@@ -234,7 +234,7 @@ export const fallbackProjects = [
     category_id: 1,
     project_url: "",
     client_name: "Ashburton Rural Development Ltd",
-    featured_image: "https://placehold.co/800x600/4a5568/ffffff?text=Land+Clearing+Project"
+    featured_image: "/landclearing.webp"
   },
   {
     id: 2,
@@ -260,7 +260,7 @@ export const fallbackProjects = [
     category_id: 2,
     project_url: "",
     client_name: "Multiple Residential Clients",
-    featured_image: "https://placehold.co/800x600/dc2626/ffffff?text=Emergency+Storm+Response"
+    featured_image: "/emergencycallouts.webp"
   },
   {
     id: 3,
@@ -286,7 +286,7 @@ export const fallbackProjects = [
     category_id: 1,
     project_url: "",
     client_name: "Canterbury Forest Holdings",
-    featured_image: "https://placehold.co/800x600/365314/ffffff?text=Forestry+Mulching"
+    featured_image: "/mulching.webp"
   }
 ];
 

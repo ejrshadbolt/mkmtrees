@@ -61,12 +61,12 @@ export default async function PortfolioProjectPage({ params }: PortfolioProjectP
         category: 'Tree Services', // Use hardcoded category for fallback
         // Generate some gallery images for demo
         gallery_images: [
-          `https://placehold.co/800x600/2d5016/ffffff?text=Before+${fallbackProject.id}`,
-          `https://placehold.co/800x600/8b4513/ffffff?text=During+${fallbackProject.id}`,
-          `https://placehold.co/800x600/228b22/ffffff?text=After+${fallbackProject.id}`,
-          `https://placehold.co/800x600/4a5568/ffffff?text=Equipment+${fallbackProject.id}`,
-          `https://placehold.co/800x600/2d5016/ffffff?text=Details+${fallbackProject.id}`,
-          `https://placehold.co/800x600/8b4513/ffffff?text=Results+${fallbackProject.id}`
+          "/landclearing.webp",
+          "/earthworks.webp", 
+          "/mulching.webp",
+          "/heavydutytilling.webp",
+          "/stationwork.webp",
+          "/review.webp"
         ]
       };
     }

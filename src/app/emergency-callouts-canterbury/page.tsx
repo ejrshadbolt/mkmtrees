@@ -7,14 +7,14 @@ export default function EmergencyCalloutsPage() {
       title: "Emergency Tree Services",
       description: "Fast, safe removal of storm-damaged or dangerous trees",
       href: "/emergency-callouts/tree-services-canterbury",
-      image: "https://placehold.co/800x600/dc2626/ffffff?text=Emergency+Tree+Services",
+      image: "/emergencytreeservices.webp",
       imageAlt: "Emergency tree removal services responding to storm damage"
     },
     {
       title: "Emergency Earthworks",
       description: "Fast response for slips, blocked access and urgent site work",
       href: "/emergency-callouts/earthworks-canterbury",
-      image: "https://placehold.co/800x600/ea580c/ffffff?text=Emergency+Earthworks",
+      image: "/emergencyearthworks.webp",
       imageAlt: "Emergency earthworks responding to land slips and access issues"
     }
   ];
@@ -72,7 +72,7 @@ export default function EmergencyCalloutsPage() {
       problemDescription="Severe weather in Canterbury isn't rare — high winds, heavy rain, and unexpected slips can turn your land into a hazard zone. Fallen trees can crush fences, block driveways, or sit dangerously across roads. Paddocks become inaccessible. Slips and bogs trap vehicles. Waiting days for help isn't an option — and untrained removal can make it worse. Most general contractors aren't set up to respond fast. They lack the right tools, insurance, or experience to work safely under emergency conditions, especially on high-risk rural terrain."
       solutionTitle="Why MKM is the Go-To Crew for Emergency Jobs"
       solutionDescription="At MKM, we've built our operation around readiness. Our team includes certified arborists and experienced operators with fast-deploy gear — including elevated saws, winches, chippers, and heavy-duty machinery. We're used to working in tough conditions and tight windows, and we leave every site safe, tidy, and ready to use again. Whether it's a tree through a shed, a washed-out track on a station, or storm damage after dark — we'll turn up, sort it, and get things moving again."
-      heroImage="https://placehold.co/1200x800/dc2626/ffffff?text=Emergency+Response"
+      heroImage="/emergencycallouts.webp"
       heroImageAlt="Emergency tree and earthworks response services in Canterbury"
       subServices={subServices}
       features={features}
