@@ -52,7 +52,7 @@ export default function ServiceTiles({ title, subtitle, services }: ServiceTiles
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-25 group-hover:bg-opacity-15 transition-all duration-300"></div>
               </div>
 
               {/* Content */}
