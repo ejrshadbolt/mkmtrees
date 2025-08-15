@@ -126,6 +126,7 @@ export default function ReviewsStats() {
                     suffix={stat.suffix} 
                     isAnimated={stat.isAnimated}
                   />
+                  <div className="w-16 h-1 mx-auto mt-3 mb-3" style={{ backgroundColor: '#F3ED17' }}></div>
                   <p className="text-gray-600 text-lg mt-2 font-medium">
                     {stat.title}
                   </p>

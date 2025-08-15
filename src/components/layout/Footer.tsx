@@ -44,8 +44,14 @@ export default function Footer() {
             {/* Company Information */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <Link href="/" className="text-3xl font-bold text-white focus-visible-ring focus-ring-dark rounded-md">
-                  {businessConfig.name}
+                <Link href="/" className="block focus-visible-ring focus-ring-dark rounded-md">
+                  <Image
+                    src="/logo.png"
+                    alt={businessConfig.name}
+                    width={200}
+                    height={60}
+                    className="h-12 w-auto"
+                  />
                 </Link>
                 <div className="w-16 h-1 mt-3" style={{ backgroundColor: '#F3ED17' }}></div>
               </div>
